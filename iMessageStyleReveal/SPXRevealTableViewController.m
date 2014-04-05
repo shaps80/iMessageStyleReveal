@@ -8,7 +8,7 @@
 
 #import "SPXRevealTableViewController.h"
 #import "UITableView+SPXRevealAdditions.h"
-
+#import "LoremIpsum.h"
 
 @implementation SPXRevealTableViewController
 
@@ -21,7 +21,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-  cell.textLabel.text = [NSString stringWithFormat:@"Section %zd : Item %zd", indexPath.section, indexPath.row];
+  cell.textLabel.text = [LoremIpsum name];
   cell.revealableView = [[UINib nibWithNibName:@"TimestampView" bundle:nil] instantiateWithOwner:nil options:nil].firstObject;
   return cell;
 }

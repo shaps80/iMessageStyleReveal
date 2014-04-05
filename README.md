@@ -1,7 +1,7 @@
 Purpose
 --------------
 
-I recenty needed to build the iMessage style pull-to-reveal timestamps feature for a personal project and decided to open source the category. :)
+I recently needed to build the iMessage style pull-to-reveal timestamps feature for a personal project and decided to open source the category. :)
 
 
 Supported OS & SDK Versions
@@ -35,6 +35,8 @@ Using this component is almost completely drop in, just follow a few simple step
 		3. cell.revealableView = timestampView;
 		
 You should call enable at a fairly early stage in your UITableView's lifecycle, ideally in `-viewDidLoad`
+
+The revealableView size is based on the XIB it was loaded from. The height will always match the cell, but the width will be maintained from the views frame ;)
 
 To gain the benefits of reusable cells, I recommended setting the revealableView in your `-awakeFromNib` cell method, but you could declare it directly in your `-cellForRowAtIndexPath` method as is shown in the included demo.
 
