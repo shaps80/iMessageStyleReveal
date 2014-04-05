@@ -44,3 +44,5 @@ That's it! It will automatically handle inserting the view into the cells, you h
 
 
 Feel free to use in any way you see fit. Please try and reference me somewhere in your app if you use this in a production app and maybe even tell me about it via Twitter [@shaps](http://twitter.com/shaps) ;)
+
+![Screenshot](http://shaps.me/downloads/iMessageStyleReveal.jpg)
