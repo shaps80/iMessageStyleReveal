@@ -22,7 +22,7 @@
 		54D217EE18EF5A6100A19583 /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54D217ED18EF5A6100A19583 /* iPhone.storyboard */; };
 		54D217F118EF5AB400A19583 /* SPXRevealTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D217F018EF5AB400A19583 /* SPXRevealTableViewController.m */; };
 		54D217F318EF5EC700A19583 /* TimestampView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54D217F218EF5EC700A19583 /* TimestampView.xib */; };
-		54D217F918EF681300A19583 /* UITableView+SPXRevealAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D217F818EF681300A19583 /* UITableView+SPXRevealAdditions.m */; };
+		54D2180118EF8DCD00A19583 /* UITableView+SPXRevealAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D217F818EF681300A19583 /* UITableView+SPXRevealAdditions.m */; };
 		F0B70066D2334B38B0736746 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8022ABD4D229429E94B14AE1 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -91,6 +91,7 @@
 		54D217B218EF5A4500A19583 = {
 			isa = PBXGroup;
 			children = (
+				54D2180018EF8CF100A19583 /* SPXRevealableView */,
 				54D217C418EF5A4500A19583 /* iMessageStyleReveal */,
 				54D217DD18EF5A4500A19583 /* iMessageStyleRevealTests */,
 				54D217BD18EF5A4500A19583 /* Frameworks */,
@@ -123,15 +124,10 @@
 		54D217C418EF5A4500A19583 /* iMessageStyleReveal */ = {
 			isa = PBXGroup;
 			children = (
-				54D217F718EF681300A19583 /* UITableView+SPXRevealAdditions.h */,
-				54D217F818EF681300A19583 /* UITableView+SPXRevealAdditions.m */,
-				54D217CD18EF5A4500A19583 /* SPXAppDelegate.h */,
-				54D217CE18EF5A4500A19583 /* SPXAppDelegate.m */,
 				54D217EF18EF5AB400A19583 /* SPXRevealTableViewController.h */,
 				54D217F018EF5AB400A19583 /* SPXRevealTableViewController.m */,
 				54D217F218EF5EC700A19583 /* TimestampView.xib */,
 				54D217ED18EF5A6100A19583 /* iPhone.storyboard */,
-				54D217D018EF5A4500A19583 /* Images.xcassets */,
 				54D217C518EF5A4500A19583 /* Supporting Files */,
 			);
 			path = iMessageStyleReveal;
@@ -140,10 +136,13 @@
 		54D217C518EF5A4500A19583 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				54D217CD18EF5A4500A19583 /* SPXAppDelegate.h */,
+				54D217CE18EF5A4500A19583 /* SPXAppDelegate.m */,
 				54D217C618EF5A4500A19583 /* iMessageStyleReveal-Info.plist */,
 				54D217C718EF5A4500A19583 /* InfoPlist.strings */,
 				54D217CA18EF5A4500A19583 /* main.m */,
 				54D217CC18EF5A4500A19583 /* iMessageStyleReveal-Prefix.pch */,
+				54D217D018EF5A4500A19583 /* Images.xcassets */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -164,6 +163,16 @@
 				54D217E018EF5A4500A19583 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		54D2180018EF8CF100A19583 /* SPXRevealableView */ = {
+			isa = PBXGroup;
+			children = (
+				54D217F718EF681300A19583 /* UITableView+SPXRevealAdditions.h */,
+				54D217F818EF681300A19583 /* UITableView+SPXRevealAdditions.m */,
+			);
+			name = SPXRevealableView;
+			path = iMessageStyleReveal;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,7 +308,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				54D217F918EF681300A19583 /* UITableView+SPXRevealAdditions.m in Sources */,
+				54D2180118EF8DCD00A19583 /* UITableView+SPXRevealAdditions.m in Sources */,
 				54D217CF18EF5A4500A19583 /* SPXAppDelegate.m in Sources */,
 				54D217CB18EF5A4500A19583 /* main.m in Sources */,
 				54D217F118EF5AB400A19583 /* SPXRevealTableViewController.m in Sources */,

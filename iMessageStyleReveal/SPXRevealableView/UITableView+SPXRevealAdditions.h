@@ -47,7 +47,7 @@ typedef NS_OPTIONS(NSInteger, SPXRevealableViewGestureDirection)
 
 
 /**
- *  Gets/sets the revealable view
+ *  Gets/sets the revealable view. The view will be added to the cell's contentView
  */
 @property (nonatomic, strong) UIView *revealableView;
 

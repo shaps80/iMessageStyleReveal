@@ -18,17 +18,17 @@
   [self.tableView enableRevealableViewForDirection:SPXRevealableViewGestureDirectionLeft];
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-  return 40;
-}
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-  cell.textLabel.text = [NSString stringWithFormat:@"%zd : %zd", indexPath.section, indexPath.row];
+  cell.textLabel.text = [NSString stringWithFormat:@"Section %zd : Item %zd", indexPath.section, indexPath.row];
   cell.revealableView = [[UINib nibWithNibName:@"TimestampView" bundle:nil] instantiateWithOwner:nil options:nil].firstObject;
   return cell;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+  return 40;
 }
 
 @end

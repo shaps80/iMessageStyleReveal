@@ -10,15 +10,21 @@
             <rect key="frame" x="0.0" y="0.0" width="60" height="44"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="6hr ago" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="osH-M3-HH9">
-                    <rect key="frame" x="0.0" y="11" width="51" height="21"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="osH-M3-HH9">
+                    <rect key="frame" x="0.0" y="11" width="60" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" red="0.2360510834084921" green="0.57162829991273123" blue="0.78823529410000004" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="osH-M3-HH9" secondAttribute="bottom" constant="12" id="9Sl-zm-lsG"/>
+                <constraint firstItem="osH-M3-HH9" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="9ef-bt-mN1"/>
+                <constraint firstItem="osH-M3-HH9" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="11" id="UAh-zQ-077"/>
+                <constraint firstAttribute="trailing" secondItem="osH-M3-HH9" secondAttribute="trailing" id="VMH-uE-wjm"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
         </view>
     </objects>
