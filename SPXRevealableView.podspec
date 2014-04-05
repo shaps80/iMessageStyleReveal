@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "SPXRevealableView"
-  s.version      = "0.1"
+  s.version      = "0.2"
   s.summary      = "iMessage style pull-to-reveal timestamps."
   s.homepage     = "http://shaps.me/imessage-style-reveal/"
   s.screenshots  = "http://shaps.me/downloads/iMessageStyleReveal.jpg"
