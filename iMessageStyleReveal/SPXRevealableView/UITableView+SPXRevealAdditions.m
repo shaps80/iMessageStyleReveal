@@ -209,7 +209,9 @@ static CGFloat currentOffset;
     return;
   }
   
+  [_revealableView removeFromSuperview];
   objc_setAssociatedObject(self, SPXRevealableView, revealableView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+  
   [self.contentView addSubview:revealableView];
   [self updateRevealableViewFrameForDirection:SPXRevealableViewGestureDirectionLeft];
 }
