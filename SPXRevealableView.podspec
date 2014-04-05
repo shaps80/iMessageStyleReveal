@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
   s.social_media_url = "http://twitter.com/shaps"
   s.platform     = :ios
   s.platform     = :ios, '6.0'
-  s.source       = { :git => "https://github.com/shaps80/iMessageStyleReveal.git", :tag => "0.1" }
+  s.source       = { :git => "https://github.com/shaps80/iMessageStyleReveal.git", :tag => s.version.to_s }
   s.source_files  = 'iMessageStyleReveal/SPXRevealableView', '*.{h,m}'
 	s.requires_arc = true
 end
