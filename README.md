@@ -20,7 +20,7 @@ The category will work correctly ONLY with ARC enabled.
 Installation
 --------------
 
-To install, either copy the category into your project or add it to your podfile.
+To install, either copy the category `UITableView+SPXRevealAdditions.h` into your project or add it to your podfile.
 
 pod 'SPXRevealableView'
 
