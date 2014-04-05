@@ -1,4 +1,0 @@
-SPXRevealableView
-=================
-
-Adds iMessage
