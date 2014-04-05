@@ -19,6 +19,11 @@
 		54D217DA18EF5A4500A19583 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54D217C218EF5A4500A19583 /* UIKit.framework */; };
 		54D217E218EF5A4500A19583 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 54D217E018EF5A4500A19583 /* InfoPlist.strings */; };
 		54D217E418EF5A4500A19583 /* iMessageStyleRevealTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D217E318EF5A4500A19583 /* iMessageStyleRevealTests.m */; };
+		54D217EE18EF5A6100A19583 /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54D217ED18EF5A6100A19583 /* iPhone.storyboard */; };
+		54D217F118EF5AB400A19583 /* SPXRevealTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D217F018EF5AB400A19583 /* SPXRevealTableViewController.m */; };
+		54D217F318EF5EC700A19583 /* TimestampView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54D217F218EF5EC700A19583 /* TimestampView.xib */; };
+		54D217F918EF681300A19583 /* UITableView+SPXRevealAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D217F818EF681300A19583 /* UITableView+SPXRevealAdditions.m */; };
+		F0B70066D2334B38B0736746 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8022ABD4D229429E94B14AE1 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +53,14 @@
 		54D217DF18EF5A4500A19583 /* iMessageStyleRevealTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iMessageStyleRevealTests-Info.plist"; sourceTree = "<group>"; };
 		54D217E118EF5A4500A19583 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		54D217E318EF5A4500A19583 /* iMessageStyleRevealTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iMessageStyleRevealTests.m; sourceTree = "<group>"; };
+		54D217ED18EF5A6100A19583 /* iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPhone.storyboard; sourceTree = "<group>"; };
+		54D217EF18EF5AB400A19583 /* SPXRevealTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPXRevealTableViewController.h; sourceTree = "<group>"; };
+		54D217F018EF5AB400A19583 /* SPXRevealTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPXRevealTableViewController.m; sourceTree = "<group>"; };
+		54D217F218EF5EC700A19583 /* TimestampView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimestampView.xib; sourceTree = "<group>"; };
+		54D217F718EF681300A19583 /* UITableView+SPXRevealAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UITableView+SPXRevealAdditions.h"; path = "SPXRevealableView/UITableView+SPXRevealAdditions.h"; sourceTree = "<group>"; };
+		54D217F818EF681300A19583 /* UITableView+SPXRevealAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UITableView+SPXRevealAdditions.m"; path = "SPXRevealableView/UITableView+SPXRevealAdditions.m"; sourceTree = "<group>"; };
+		8022ABD4D229429E94B14AE1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9C41533A4B54097AB6674FC /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +71,7 @@
 				54D217C118EF5A4500A19583 /* CoreGraphics.framework in Frameworks */,
 				54D217C318EF5A4500A19583 /* UIKit.framework in Frameworks */,
 				54D217BF18EF5A4500A19583 /* Foundation.framework in Frameworks */,
+				F0B70066D2334B38B0736746 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +95,7 @@
 				54D217DD18EF5A4500A19583 /* iMessageStyleRevealTests */,
 				54D217BD18EF5A4500A19583 /* Frameworks */,
 				54D217BC18EF5A4500A19583 /* Products */,
+				B9C41533A4B54097AB6674FC /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,6 +115,7 @@
 				54D217C018EF5A4500A19583 /* CoreGraphics.framework */,
 				54D217C218EF5A4500A19583 /* UIKit.framework */,
 				54D217D718EF5A4500A19583 /* XCTest.framework */,
+				8022ABD4D229429E94B14AE1 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -107,8 +123,14 @@
 		54D217C418EF5A4500A19583 /* iMessageStyleReveal */ = {
 			isa = PBXGroup;
 			children = (
+				54D217F718EF681300A19583 /* UITableView+SPXRevealAdditions.h */,
+				54D217F818EF681300A19583 /* UITableView+SPXRevealAdditions.m */,
 				54D217CD18EF5A4500A19583 /* SPXAppDelegate.h */,
 				54D217CE18EF5A4500A19583 /* SPXAppDelegate.m */,
+				54D217EF18EF5AB400A19583 /* SPXRevealTableViewController.h */,
+				54D217F018EF5AB400A19583 /* SPXRevealTableViewController.m */,
+				54D217F218EF5EC700A19583 /* TimestampView.xib */,
+				54D217ED18EF5A6100A19583 /* iPhone.storyboard */,
 				54D217D018EF5A4500A19583 /* Images.xcassets */,
 				54D217C518EF5A4500A19583 /* Supporting Files */,
 			);
@@ -151,9 +173,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 54D217E718EF5A4500A19583 /* Build configuration list for PBXNativeTarget "iMessageStyleReveal" */;
 			buildPhases = (
+				5C67074527FE47179D568135 /* Check Pods Manifest.lock */,
 				54D217B718EF5A4500A19583 /* Sources */,
 				54D217B818EF5A4500A19583 /* Frameworks */,
 				54D217B918EF5A4500A19583 /* Resources */,
+				EB359BF6C887472FB503C660 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -221,6 +245,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				54D217C918EF5A4500A19583 /* InfoPlist.strings in Resources */,
+				54D217F318EF5EC700A19583 /* TimestampView.xib in Resources */,
+				54D217EE18EF5A6100A19583 /* iPhone.storyboard in Resources */,
 				54D217D118EF5A4500A19583 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -235,13 +261,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5C67074527FE47179D568135 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EB359BF6C887472FB503C660 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		54D217B718EF5A4500A19583 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54D217F918EF681300A19583 /* UITableView+SPXRevealAdditions.m in Sources */,
 				54D217CF18EF5A4500A19583 /* SPXAppDelegate.m in Sources */,
 				54D217CB18EF5A4500A19583 /* main.m in Sources */,
+				54D217F118EF5AB400A19583 /* SPXRevealTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,6 +416,7 @@
 		};
 		54D217E818EF5A4500A19583 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B9C41533A4B54097AB6674FC /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -368,6 +430,7 @@
 		};
 		54D217E918EF5A4500A19583 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B9C41533A4B54097AB6674FC /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -438,6 +501,7 @@
 				54D217E918EF5A4500A19583 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		54D217EA18EF5A4500A19583 /* Build configuration list for PBXNativeTarget "iMessageStyleRevealTests" */ = {
 			isa = XCConfigurationList;
@@ -446,6 +510,7 @@
 				54D217EC18EF5A4500A19583 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

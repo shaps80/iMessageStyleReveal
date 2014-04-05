@@ -1,0 +1,10 @@
+PODS:
+  - LoremIpsum (0.3.0)
+
+DEPENDENCIES:
+  - LoremIpsum
+
+SPEC CHECKSUMS:
+  LoremIpsum: ed88a0647c0e4e5d22f643b100e73cea887c0a31
+
+COCOAPODS: 0.29.0
