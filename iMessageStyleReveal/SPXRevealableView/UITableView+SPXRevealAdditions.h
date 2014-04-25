@@ -39,7 +39,7 @@ typedef NS_OPTIONS(NSInteger, SPXRevealableViewGestureDirection)
   SPXRevealableViewGestureDirectionRight
 };
 
-typedef NS_OPTIONS(NSInteger, SPXRevealableViewStyle)
+typedef NS_ENUM(NSInteger, SPXRevealableViewStyle)
 {
   /**
    *  Slide table cell with revealable view attached
