@@ -1,16 +1,16 @@
 /*
    Copyright (c) 2014 Snippex. All rights reserved.
-
+ 
  Redistribution and use in source and binary forms, with or without
  modification, are permitted provided that the following conditions are met:
-
+ 
  1. Redistributions of source code must retain the above copyright notice, this
  list of conditions and the following disclaimer.
-
+ 
  2. Redistributions in binary form must reproduce the above copyright notice,
  this list of conditions and the following disclaimer in the documentation
  and/or other materials provided with the distribution.
-
+ 
  THIS SOFTWARE IS PROVIDED BY Snippex `AS IS' AND ANY EXPRESS OR
  IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
  MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO
@@ -23,44 +23,16 @@
  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-/**
- *  Defines the gesture options avaialble for the revealable views
- */
-typedef NS_OPTIONS(NSInteger, SPXRevealableViewGestureDirection)
-{
-  /**
-   *  Pan to the left
-   */
-  SPXRevealableViewGestureDirectionLeft,
-  /**
-   *  Pan to the right
-   */
-  SPXRevealableViewGestureDirectionRight
-};
+#import <UIKit/UIKit.h>
 
+IB_DESIGNABLE
+@interface SPXRevealableView : UIView
 
-/**
- *  Adds support for a revealable view to this cell
- */
-@interface UITableViewCell (SPXRevealAdditions)
+@property (nonatomic, assign) IBInspectable BOOL custom;
+@property (nonatomic, strong) UIFont *font;
 
-
-/**
- *  Gets/sets the revealable view. The view will be added to the cell's contentView
- */
-@property (nonatomic, strong) UIView *revealableView;
-
+@property (nonatomic, strong) IBInspectable NSString *text;
+@property (nonatomic, assign) IBInspectable BOOL rightAlign;
+@property (nonatomic, assign) IBInspectable NSUInteger textPadding;
 
 @end
-
-
-/**
- *  Adds support for revealable views to all cells when performing a left or right gesture
- */
-@interface UITableView (SPXRevealAdditions)
-
-- (void)enableRevealableViewForDirection:(SPXRevealableViewGestureDirection)direction;
-
-@end
-
-

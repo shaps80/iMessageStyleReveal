@@ -10,29 +10,29 @@
 	<string>iMessageStyleReveal</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>807DE584-99B9-4C1A-A1C7-522F0CF609FD</key>
+		<key>84E0A42523A9420FEE7ED342EAD4DEA996295B25</key>
 		<string>ssh://github.com/shaps80/iMessageStyleReveal.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>iMessageStyleReveal.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>807DE584-99B9-4C1A-A1C7-522F0CF609FD</key>
+		<key>84E0A42523A9420FEE7ED342EAD4DEA996295B25</key>
 		<string>..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>ssh://github.com/shaps80/iMessageStyleReveal.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>807DE584-99B9-4C1A-A1C7-522F0CF609FD</string>
+	<string>84E0A42523A9420FEE7ED342EAD4DEA996295B25</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>807DE584-99B9-4C1A-A1C7-522F0CF609FD</string>
+			<string>84E0A42523A9420FEE7ED342EAD4DEA996295B25</string>
 			<key>IDESourceControlWCCName</key>
 			<string>iMessageStyleReveal</string>
 		</dict>

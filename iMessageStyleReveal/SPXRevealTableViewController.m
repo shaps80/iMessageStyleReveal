@@ -20,8 +20,17 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+  UIView *backgroundView = [UIView new];
+  backgroundView.backgroundColor = [UIColor blueColor];
+  
   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
   cell.textLabel.text = [LoremIpsum name];
+  cell.backgroundView = backgroundView;
+  
+  backgroundView = [UIView new];
+  backgroundView.backgroundColor = [UIColor redColor];
+  cell.selectedBackgroundView = backgroundView;
+  
   cell.revealableView = [[UINib nibWithNibName:@"TimestampView" bundle:nil] instantiateWithOwner:nil options:nil].firstObject;
   return cell;
 }

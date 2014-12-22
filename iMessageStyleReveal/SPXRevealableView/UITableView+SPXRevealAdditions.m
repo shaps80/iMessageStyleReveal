@@ -61,7 +61,6 @@ static void * SPXContext = &SPXContext;
   if (!gesture) {
     gesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(pan:)];
     gesture.delegate = self;
-    self.panGestureRecognizer.enabled = NO;
     objc_setAssociatedObject(self, SPXPanGestureRecognizer, gesture, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
   }
   
@@ -212,7 +211,8 @@ static CGFloat currentOffset;
   [_revealableView removeFromSuperview];
   objc_setAssociatedObject(self, SPXRevealableView, revealableView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
   
-  [self.contentView addSubview:revealableView];
+  [self addSubview:revealableView];
+//  [self.contentView addSubview:revealableView];
   [self updateRevealableViewFrameForDirection:SPXRevealableViewGestureDirectionLeft];
 }
 

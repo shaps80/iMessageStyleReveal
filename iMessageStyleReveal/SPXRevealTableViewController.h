@@ -6,7 +6,6 @@
 //  Copyright (c) 2014 Snippex. All rights reserved.
 //
 
-@interface SPXRevealTableViewController : UIViewController <UITableViewDataSource>
-@property (nonatomic, weak) IBOutlet UITableView *tableView;
+@interface SPXRevealTableViewController : UITableViewController
 @end
 
