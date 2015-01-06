@@ -34,7 +34,7 @@ Using this component is almost completely drop in, just follow a few simple step
 #import "UITableView+SPXRevealAdditions.h"
 ...
 [self.tableView enableRevealableViewForDirection:SPXRevealableViewGestureDirectionLeft];
-cell.revealableView = [[UINib nibNamed:@"TimestampView"] instantiateNibWithOwner:nil bundle:nil].firstObject;
+cell.revealableView = [[UINib nibWithNibName:@"TimestampView" bundle:nil] instantiateWithOwner:nil options:nil].firstObject;
 ```
 		
 You should call enable at a fairly early stage in your UITableView's lifecycle, ideally in `-viewDidLoad`
