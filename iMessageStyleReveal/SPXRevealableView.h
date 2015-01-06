@@ -53,6 +53,7 @@ IB_DESIGNABLE
 @property (nonatomic, assign) IBInspectable NSUInteger textPadding;
 @property (nonatomic, assign) IBInspectable BOOL showVerticalSeparator;
 @property (nonatomic, assign) IBInspectable BOOL showHorizontalSeparator;
+@property (nonatomic, assign) CGFloat width;
 
 @property (nonatomic, strong) UIView *backgroundView;
 @property (nonatomic, strong) UIView *selectedBackgroundView;

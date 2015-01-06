@@ -20,6 +20,9 @@
                 <userDefinedRuntimeAttribute type="string" keyPath="text" value="22:30"/>
                 <userDefinedRuntimeAttribute type="boolean" keyPath="showHorizontalSeparator" value="YES"/>
                 <userDefinedRuntimeAttribute type="boolean" keyPath="showVerticalSeparator" value="YES"/>
+                <userDefinedRuntimeAttribute type="number" keyPath="width">
+                    <real key="value" value="60"/>
+                </userDefinedRuntimeAttribute>
             </userDefinedRuntimeAttributes>
         </view>
     </objects>

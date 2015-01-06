@@ -115,6 +115,18 @@
   [self configureTextField];
 }
 
+- (CGFloat)width
+{
+  return CGRectGetWidth(self.bounds);
+}
+
+- (void)setWidth:(CGFloat)width
+{
+  CGRect rect = self.frame;
+  rect.size.width = width;
+  self.frame = rect;
+}
+
 - (void)setRightAlign:(BOOL)rightAlign
 {
   _rightAlign = rightAlign;
@@ -250,6 +262,7 @@
 
 - (void)configureTextField
 {
+  self.width = 60;
   if (self.custom) {
     [self.textLabel removeFromSuperview];
     self.textLabel = nil;
