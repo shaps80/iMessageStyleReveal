@@ -32,9 +32,7 @@ Using this component is almost completely drop in, just follow a few simple step
 
 ```ruby
 #import "UITableView+SPXRevealAdditions.h"
-.
-.
-.
+...
 [self.tableView enableRevealableViewForDirection:SPXRevealableViewGestureDirectionLeft];
 cell.revealableView = [[UINib nibNamed:@"TimestampView"] instantiateNibWithOwner:nil bundle:nil].firstObject;
 ```
