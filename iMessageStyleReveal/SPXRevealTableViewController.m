@@ -20,19 +20,39 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-  UIView *backgroundView = [UIView new];
-  backgroundView.backgroundColor = [UIColor blueColor];
-  
   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
   cell.textLabel.text = [LoremIpsum name];
+  cell.textLabel.backgroundColor = [UIColor clearColor];
+  
+  UIView *backgroundView = [UIView new];
+  backgroundView.backgroundColor = [[UIColor blueColor] colorWithAlphaComponent:0.1];
+  
   cell.backgroundView = backgroundView;
   
   backgroundView = [UIView new];
-  backgroundView.backgroundColor = [UIColor redColor];
+  backgroundView.backgroundColor = [[UIColor redColor] colorWithAlphaComponent:0.1];
   cell.selectedBackgroundView = backgroundView;
   
-  cell.revealableView = [[UINib nibWithNibName:@"TimestampView" bundle:nil] instantiateWithOwner:nil options:nil].firstObject;
+  if (indexPath.row == 0 || indexPath.row == 1) {
+    cell.revealableView = [[UINib nibWithNibName:@"TimestampView" bundle:nil] instantiateWithOwner:nil options:nil].firstObject;
+    
+    backgroundView = [UIView new];
+    backgroundView.backgroundColor = [[UIColor blueColor] colorWithAlphaComponent:0.1];
+    cell.revealableView.backgroundView = backgroundView;
+    
+    backgroundView = [UIView new];
+    backgroundView.backgroundColor = [[UIColor redColor] colorWithAlphaComponent:0.1];
+    cell.revealableView.selectedBackgroundView = backgroundView;
+  } else {
+    cell.revealableView = nil;
+  }
+
   return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+  return 44;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

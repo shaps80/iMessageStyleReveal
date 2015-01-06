@@ -26,10 +26,17 @@
 #import "UITableView+SPXRevealAdditions.h"
 #import <objc/runtime.h>
 
-static void * SPXRevealableView = &SPXRevealableView;
 static void * SPXPanGestureRecognizer = &SPXPanGestureRecognizer;
 static void * SPXPanGestureDirection = &SPXPanGestureDirection;
 static void * SPXContext = &SPXContext;
+
+@interface SPXRevealableView (SPXRevealAdditionsPrivate)
+@property (nonatomic, assign) SPXRevealableViewGestureDirection gestureDirection;
+@property (nonatomic, assign) UITableViewStyle tableViewStyle;
+@property (nonatomic, strong) UIView *horizontalSeparator;
+@property (nonatomic, strong) UIView *verticalSeparator;
+@property (nonatomic, assign) BOOL selected;
+@end
 
 @interface UITableViewCell (SPXRevealAdditionsPrivate)
 - (void)updateRevealableViewFrameForDirection:(SPXRevealableViewGestureDirection)direction;
@@ -120,6 +127,23 @@ static CGFloat currentOffset;
   }
 }
 
+- (void)updateSeparatorForCells
+{
+  for (UITableViewCell *cell in self.visibleCells) {
+    SPXRevealableView *view = cell.revealableView;
+    NSIndexPath *indexPath = [self indexPathForCell:cell];
+    
+    if (indexPath.item == 0) {
+      cell.revealableView.tableViewStyle = self.style;
+    } else {
+      cell.revealableView.tableViewStyle = UITableViewStylePlain;
+    }
+    
+    view.horizontalSeparator.backgroundColor = self.separatorColor;
+    view.verticalSeparator.backgroundColor = self.separatorColor;
+  }
+}
+
 #pragma mark - Observers and gesture handling
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
@@ -127,6 +151,7 @@ static CGFloat currentOffset;
   if (context == SPXContext) {
     if ([keyPath isEqualToString:@"contentOffset"]) {
       [self updateFramesForCells];
+      [self updateSeparatorForCells];
       return;
     }
   }
@@ -172,6 +197,9 @@ static CGFloat currentOffset;
 @end
 
 
+static NSString * const SPXRevealCellSelectedKey = @"selected";
+
+
 /**
  *  The following implementation just ensures we have a revealable view and that its layed out correctly
  */
@@ -192,16 +220,23 @@ static CGFloat currentOffset;
   
   rect.origin.y = CGRectGetMinY(rect);
   rect.size.height = CGRectGetHeight(self.bounds);
+  
+  self.revealableView.gestureDirection = direction;
   self.revealableView.frame = rect;
 }
 
-- (UIView *)revealableView
+- (SPXRevealableView *)revealableView
 {
-  return objc_getAssociatedObject(self, SPXRevealableView);
+  return objc_getAssociatedObject(self, @selector(revealableView));
 }
 
-- (void)setRevealableView:(UIView *)revealableView
+- (void)setRevealableView:(SPXRevealableView *)revealableView
 {
+  if (!revealableView) {
+    [self.revealableView removeFromSuperview];
+    return;
+  }
+  
   UIView *_revealableView = [self revealableView];
   
   if (_revealableView == revealableView) {
@@ -209,19 +244,11 @@ static CGFloat currentOffset;
   }
   
   [_revealableView removeFromSuperview];
-  objc_setAssociatedObject(self, SPXRevealableView, revealableView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+  objc_setAssociatedObject(self, @selector(revealableView), revealableView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
   
   [self addSubview:revealableView];
-//  [self.contentView addSubview:revealableView];
   [self updateRevealableViewFrameForDirection:SPXRevealableViewGestureDirectionLeft];
 }
 
 @end
-
-
-
-
-
-
-
 

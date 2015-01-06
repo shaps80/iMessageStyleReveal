@@ -23,20 +23,7 @@
  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-/**
- *  Defines the gesture options avaialble for the revealable views
- */
-typedef NS_OPTIONS(NSInteger, SPXRevealableViewGestureDirection)
-{
-  /**
-   *  Pan to the left
-   */
-  SPXRevealableViewGestureDirectionLeft,
-  /**
-   *  Pan to the right
-   */
-  SPXRevealableViewGestureDirectionRight
-};
+#import "SPXRevealableView.h"
 
 
 /**
@@ -48,7 +35,7 @@ typedef NS_OPTIONS(NSInteger, SPXRevealableViewGestureDirection)
 /**
  *  Gets/sets the revealable view. The view will be added to the cell's contentView
  */
-@property (nonatomic, strong) UIView *revealableView;
+@property (nonatomic, strong) SPXRevealableView *revealableView;
 
 
 @end

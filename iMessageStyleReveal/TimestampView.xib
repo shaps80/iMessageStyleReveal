@@ -10,18 +10,16 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SPXRevealableView">
             <rect key="frame" x="0.0" y="0.0" width="60" height="44"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <userDefinedRuntimeAttributes>
-                <userDefinedRuntimeAttribute type="string" keyPath="text" value="12:30"/>
-                <userDefinedRuntimeAttribute type="boolean" keyPath="rightAlign" value="NO"/>
                 <userDefinedRuntimeAttribute type="number" keyPath="textPadding">
                     <integer key="value" value="5"/>
                 </userDefinedRuntimeAttribute>
-                <userDefinedRuntimeAttribute type="number" keyPath="fontSize">
-                    <real key="value" value="15"/>
-                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="string" keyPath="text" value="22:30"/>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="showHorizontalSeparator" value="YES"/>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="showVerticalSeparator" value="YES"/>
             </userDefinedRuntimeAttributes>
         </view>
     </objects>

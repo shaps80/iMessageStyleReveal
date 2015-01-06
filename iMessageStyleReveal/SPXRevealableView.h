@@ -25,14 +25,36 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ *  Defines the gesture options avaialble for the revealable views
+ */
+typedef NS_OPTIONS(NSInteger, SPXRevealableViewGestureDirection)
+{
+  /**
+   *  Pan to the left
+   */
+  SPXRevealableViewGestureDirectionLeft,
+  /**
+   *  Pan to the right
+   */
+  SPXRevealableViewGestureDirectionRight
+};
+
+
 IB_DESIGNABLE
 @interface SPXRevealableView : UIView
 
-@property (nonatomic, assign) IBInspectable BOOL custom;
-@property (nonatomic, strong) UIFont *font;
+@property (nonatomic, readonly) UILabel *textLabel;
 
+@property (nonatomic, assign) IBInspectable BOOL custom;
 @property (nonatomic, strong) IBInspectable NSString *text;
+@property (nonatomic, strong) IBInspectable UIColor *textColor;
 @property (nonatomic, assign) IBInspectable BOOL rightAlign;
 @property (nonatomic, assign) IBInspectable NSUInteger textPadding;
+@property (nonatomic, assign) IBInspectable BOOL showVerticalSeparator;
+@property (nonatomic, assign) IBInspectable BOOL showHorizontalSeparator;
+
+@property (nonatomic, strong) UIView *backgroundView;
+@property (nonatomic, strong) UIView *selectedBackgroundView;
 
 @end
