@@ -30,9 +30,11 @@ Usage
 
 Using this component is almost completely drop in, just follow a few simple steps:
 
+```ruby
 		1. #import "UITableView+SPXRevealAdditions.h"
 		2. [self.tableView enableRevealableViewForDirection:SPXRevealableViewGestureDirectionLeft];
 		3. cell.revealableView = [[UINib nibNamed:@"TimestampView"] instantiateNibWithOwner:nil bundle:nil].firstObject;
+```
 		
 You should call enable at a fairly early stage in your UITableView's lifecycle, ideally in `-viewDidLoad`
 
