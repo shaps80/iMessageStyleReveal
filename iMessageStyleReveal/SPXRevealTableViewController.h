@@ -6,6 +6,6 @@
 //  Copyright (c) 2014 Snippex. All rights reserved.
 //
 
-@interface SPXRevealTableViewController : UITableViewController
+@interface SPXRevealTableViewController : UIViewController
 @end
 
