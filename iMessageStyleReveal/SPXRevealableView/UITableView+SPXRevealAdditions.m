@@ -31,6 +31,8 @@ static void * SPXPanGestureRecognizer = &SPXPanGestureRecognizer;
 static void * SPXPanGestureDirection = &SPXPanGestureDirection;
 static void * SPXContext = &SPXContext;
 
+static void * SPXRevealStyle = &SPXRevealStyle;
+
 @interface UITableViewCell (SPXRevealAdditionsPrivate)
 - (void)updateRevealableViewFrameForDirection:(SPXRevealableViewGestureDirection)direction;
 @end
@@ -41,7 +43,6 @@ static void * SPXContext = &SPXContext;
 @end
 
 @implementation UITableView (SPXRevealAdditions)
-
 #pragma mark - Gestures
 
 - (SPXRevealableViewGestureDirection)spx_gestureDirection
@@ -103,19 +104,21 @@ static CGFloat currentOffset;
 - (void)updateFramesForCells
 {
   for (UITableViewCell *cell in self.visibleCells) {
-    CGRect rect = cell.frame;
+    CGRect rect = cell.contentView.frame;
     CGFloat x = currentOffset;
     
-    if (self.spx_gestureDirection == SPXRevealableViewGestureDirectionLeft) {
-      x = MAX(x, -CGRectGetWidth(cell.revealableView.bounds));
-      x = MIN(x, 0);
-    } else {
-      x = MAX(x, 0);
-      x = MIN(x, CGRectGetWidth(cell.revealableView.bounds));
-    }
+    if (cell.revealStyle == SPXRevealableViewStyleSlide) {
+      if (self.spx_gestureDirection == SPXRevealableViewGestureDirectionLeft) {
+        x = MAX(x, -CGRectGetWidth(cell.revealableView.bounds));
+        x = MIN(x, 0);
+      } else {
+        x = MAX(x, 0);
+        x = MIN(x, CGRectGetWidth(cell.revealableView.bounds));
+      }
     
-    rect.origin.x = x;
-    cell.frame = rect;
+      rect.origin.x = x;
+      cell.contentView.frame = rect;
+    }
     
     [cell updateRevealableViewFrameForDirection:self.spx_gestureDirection];
   }
@@ -156,9 +159,7 @@ static CGFloat currentOffset;
         for (UITableViewCell *cell in self.visibleCells) {
           currentOffset = 0;
           
-          CGRect rect = cell.frame;
-          rect.origin.x = 0;
-          cell.frame = rect;
+          [self updateFramesForCells];
         }
       } completion:^(BOOL finished) {
         translationX = 0;
@@ -179,18 +180,40 @@ static CGFloat currentOffset;
 
 @implementation UITableViewCell (SPXRevealAdditions)
 
+#pragma mark - Reveal Style
+- (SPXRevealableViewStyle)revealStyle
+{
+  return [objc_getAssociatedObject(self, SPXRevealStyle) intValue];
+}
+
+- (void)setRevealStyle:(SPXRevealableViewStyle)revealStyle
+{
+  objc_setAssociatedObject(self, SPXRevealStyle, @(revealStyle), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
 - (void)updateRevealableViewFrameForDirection:(SPXRevealableViewGestureDirection)direction
 {
   CGRect rect = self.revealableView.bounds;
   
-  if (direction == SPXRevealableViewGestureDirectionLeft) {
-    rect.origin.x = CGRectGetMaxX(self.bounds);
-    self.revealableView.autoresizesSubviews = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleLeftMargin;
-  } else {
-    rect.origin.x = CGRectGetMinX(self.bounds) - CGRectGetWidth(self.revealableView.bounds);
-    self.revealableView.autoresizesSubviews = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleRightMargin;
+  if (self.revealStyle == SPXRevealableViewStyleSlide) {
+    if (direction == SPXRevealableViewGestureDirectionLeft) {
+      rect.origin.x = CGRectGetMaxX(self.contentView.frame);
+      self.revealableView.autoresizesSubviews = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleLeftMargin;
+    } else {
+      rect.origin.x = CGRectGetMinX(self.contentView.frame) - CGRectGetWidth(self.revealableView.bounds);
+      self.revealableView.autoresizesSubviews = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleRightMargin;
+    }
   }
-  
+  else {
+    if (direction == SPXRevealableViewGestureDirectionLeft) {
+      rect.origin.x = CGRectGetMaxX(self.bounds) + MAX(currentOffset, -CGRectGetWidth(self.revealableView.bounds));
+      self.revealableView.autoresizesSubviews = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleLeftMargin;
+    } else {
+      rect.origin.x = -CGRectGetWidth(self.revealableView.bounds) + MIN(currentOffset, CGRectGetWidth(self.revealableView.bounds));
+      self.revealableView.autoresizesSubviews = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleRightMargin;
+    }
+  }
+
   rect.origin.y = CGRectGetMinY(rect);
   rect.size.height = CGRectGetHeight(self.bounds);
   self.revealableView.frame = rect;
@@ -212,7 +235,7 @@ static CGFloat currentOffset;
   [_revealableView removeFromSuperview];
   objc_setAssociatedObject(self, SPXRevealableView, revealableView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
   
-  [self.contentView addSubview:revealableView];
+  [self addSubview:revealableView];
   [self updateRevealableViewFrameForDirection:SPXRevealableViewGestureDirectionLeft];
 }
 

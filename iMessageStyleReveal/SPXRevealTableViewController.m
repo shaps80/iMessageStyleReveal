@@ -23,6 +23,11 @@
   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
   cell.textLabel.text = [LoremIpsum name];
   cell.revealableView = [[UINib nibWithNibName:@"TimestampView" bundle:nil] instantiateWithOwner:nil options:nil].firstObject;
+  cell.revealStyle = rand() % 2 ? SPXRevealableViewStyleOverlay : SPXRevealableViewStyleSlide;
+  
+  cell.textLabel.textAlignment = cell.revealStyle == SPXRevealableViewStyleSlide ? NSTextAlignmentRight : NSTextAlignmentLeft;
+  cell.selectionStyle = UITableViewCellSelectionStyleNone;
+  
   return cell;
 }
 
