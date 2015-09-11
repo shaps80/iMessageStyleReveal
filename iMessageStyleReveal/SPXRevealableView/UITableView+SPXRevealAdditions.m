@@ -156,11 +156,8 @@ static CGFloat currentOffset;
     default:
     {
       [UIView animateWithDuration:0.3 animations:^{
-        for (UITableViewCell *cell in self.visibleCells) {
           currentOffset = 0;
-          
           [self updateFramesForCells];
-        }
       } completion:^(BOOL finished) {
         translationX = 0;
       }];
