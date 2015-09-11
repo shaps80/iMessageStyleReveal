@@ -236,7 +236,7 @@ static CGFloat currentOffset;
   objc_setAssociatedObject(self, SPXRevealableView, revealableView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
   
   [self addSubview:revealableView];
-  [self updateRevealableViewFrameForDirection:SPXRevealableViewGestureDirectionLeft];
+  [self updateRevealableViewFrameForDirection:SPXRevealableViewGestureDirectionRight];
 }
 
 @end
