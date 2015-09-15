@@ -156,11 +156,8 @@ static CGFloat currentOffset;
     default:
     {
       [UIView animateWithDuration:0.3 animations:^{
-        for (UITableViewCell *cell in self.visibleCells) {
           currentOffset = 0;
-          
           [self updateFramesForCells];
-        }
       } completion:^(BOOL finished) {
         translationX = 0;
       }];
@@ -236,7 +233,7 @@ static CGFloat currentOffset;
   objc_setAssociatedObject(self, SPXRevealableView, revealableView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
   
   [self addSubview:revealableView];
-  [self updateRevealableViewFrameForDirection:SPXRevealableViewGestureDirectionLeft];
+  [self updateRevealableViewFrameForDirection:SPXRevealableViewGestureDirectionRight];
 }
 
 @end
