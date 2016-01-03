@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		17A11ECB44B325C26EAC844F /* Pods_RevealableCell_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66C8C855D93EA742ABD0268D /* Pods_RevealableCell_Example.framework */; };
-		54186F911C39A09A0075853F /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54186F901C39A09A0075853F /* UITableView+Extension.swift */; };
-		54186F931C39A0AA0075853F /* UITableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54186F921C39A0AA0075853F /* UITableViewCell+Extension.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -376,8 +374,6 @@
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
-				54186F911C39A09A0075853F /* UITableView+Extension.swift in Sources */,
-				54186F931C39A0AA0075853F /* UITableViewCell+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,40 +1,23 @@
-#
-# Be sure to run `pod lib lint RevealableCell.podspec' to ensure this is a
-# valid spec before submitting.
-#
-# Any lines starting with a # are optional, but their use is encouraged
-# To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html
-#
-
 Pod::Spec.new do |s|
-  s.name             = "RevealableCell"
-  s.version          = "0.1.0"
-  s.summary          = "A short description of RevealableCell."
 
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!  
-  s.description      = <<-DESC
-                       DESC
+  # ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
+  #
+  #  These will help people to find your library, and whilst it
+  #  can feel like a chore to fill in it's definitely to your advantage. The
+  #  summary should be tweet-length, and the description more in depth.
+  #
 
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/RevealableCell"
-  # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
-  s.license          = 'MIT'
-  s.author           = { "Shaps Mohsenin" => "shapsuk@me.com" }
-  s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/RevealableCell.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
-
-  s.platform     = :ios, '8.0'
-  s.requires_arc = true
-
-  s.source_files = 'Pod/Classes/**/*'
-  s.resource_bundles = {
-    'RevealableCell' => ['Pod/Assets/*.png']
-  }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.name         = "SPXRevealableView"
+  s.version      = "0.2"
+  s.summary      = "iMessage style pull-to-reveal timestamps."
+  s.homepage     = "http://shaps.me/imessage-style-reveal/"
+  s.screenshots  = "http://shaps.me/downloads/iMessageStyleReveal.jpg"
+  s.license      = 'MIT'
+  s.author             = { "Shaps Mohsenin" => "shaps80@me.com" }
+  s.social_media_url = "http://twitter.com/shaps"
+  s.platform     = :ios
+  s.platform     = :ios, '6.0'
+  s.source       = { :git => "https://github.com/shaps80/iMessageStyleReveal.git", :tag => s.version.to_s }
+  s.source_files  = 'iMessageStyleReveal/SPXRevealableView', '*.{h,m}'
+	s.requires_arc = true
 end

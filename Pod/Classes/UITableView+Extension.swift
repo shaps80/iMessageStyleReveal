@@ -7,3 +7,11 @@
 //
 
 import UIKit
+
+extension UITableView {
+  
+  class func test() {
+    
+  }
+  
+}
