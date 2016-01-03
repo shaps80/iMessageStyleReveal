@@ -1,0 +1,25 @@
+{
+  "name": "RevealableCell",
+  "version": "0.1.0",
+  "summary": "A short description of RevealableCell.",
+  "description": "",
+  "homepage": "https://github.com/<GITHUB_USERNAME>/RevealableCell",
+  "license": "MIT",
+  "authors": {
+    "Shaps Mohsenin": "shapsuk@me.com"
+  },
+  "source": {
+    "git": "https://github.com/<GITHUB_USERNAME>/RevealableCell.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "requires_arc": true,
+  "source_files": "Pod/Classes/**/*",
+  "resource_bundles": {
+    "RevealableCell": [
+      "Pod/Assets/*.png"
+    ]
+  }
+}

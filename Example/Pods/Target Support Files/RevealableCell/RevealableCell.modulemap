@@ -1,0 +1,6 @@
+framework module RevealableCell {
+  umbrella header "RevealableCell-umbrella.h"
+
+  export *
+  module * { export * }
+}

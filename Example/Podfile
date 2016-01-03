@@ -1,0 +1,12 @@
+source 'https://github.com/CocoaPods/Specs.git'
+use_frameworks!
+
+target 'RevealableCell_Example', :exclusive => true do
+  pod "RevealableCell", :path => "../"
+end
+
+target 'RevealableCell_Tests', :exclusive => true do
+  pod "RevealableCell", :path => "../"
+
+  
+end

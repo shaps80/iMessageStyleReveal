@@ -1,0 +1,6 @@
+framework module Pods_RevealableCell_Tests {
+  umbrella header "Pods-RevealableCell_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

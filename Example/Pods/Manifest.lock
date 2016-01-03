@@ -1,0 +1,14 @@
+PODS:
+  - RevealableCell (0.1.0)
+
+DEPENDENCIES:
+  - RevealableCell (from `../`)
+
+EXTERNAL SOURCES:
+  RevealableCell:
+    :path: ../
+
+SPEC CHECKSUMS:
+  RevealableCell: c1bcf43d30f78406c59d6d6a78bdc0bb0323c74e
+
+COCOAPODS: 0.39.0
