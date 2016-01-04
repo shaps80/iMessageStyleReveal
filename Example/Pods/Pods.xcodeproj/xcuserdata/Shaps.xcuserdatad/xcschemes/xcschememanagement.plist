@@ -4,17 +4,12 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods-RevealableCell_Example.xcscheme</key>
+		<key>LoremIpsum.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-RevealableCell_Tests.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>RevealableCell-RevealableCell.xcscheme</key>
+		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -27,22 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0575E04BB99EB2AD9060B7CBCC8B0DE5</key>
+		<key>A5DF3319BA7B020778F7D807A2EEB9F1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>72D0F60740662F42FA859DE4C0DE5377</key>
+		<key>AC8432121E84B3F4C381F4D5E457C765</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D9159C2057BCAE075008E32B9009B867</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F42034ECB6FA02983E0AAEF1193B6B15</key>
+		<key>CDF682E45BA853ECA658CD1D1FFD1747</key>
 		<dict>
 			<key>primary</key>
 			<true/>
