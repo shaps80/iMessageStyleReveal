@@ -26,11 +26,28 @@
 #import "SPXRevealableView.h"
 
 
+typedef NS_ENUM(NSInteger, SPXRevealableViewStyle)
+{
+  /**
+   *  Slide table cell with revealable view attached
+   */
+  SPXRevealableViewStyleSlide,
+  /**
+   *  Slide revealable view over top the cell
+   */
+  SPXRevealableViewStyleOverlay
+};
+
+
 /**
  *  Adds support for a revealable view to this cell
  */
 @interface UITableViewCell (SPXRevealAdditions)
 
+/**
+ *  Gets/sets the reveal style.
+ */
+@property (nonatomic, assign) SPXRevealableViewStyle revealStyle;
 
 /**
  *  Gets/sets the revealable view. The view will be added to the cell's contentView
@@ -46,6 +63,11 @@
  */
 @interface UITableView (SPXRevealAdditions)
 
+/**
+ *  Enables a revealable view for the specified gesture direction
+ *
+ *  @param direction The gesture direction
+ */
 - (void)enableRevealableViewForDirection:(SPXRevealableViewGestureDirection)direction;
 
 @end
