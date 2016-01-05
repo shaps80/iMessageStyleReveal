@@ -1,52 +1,65 @@
 Purpose
 --------------
 
-I recently needed to build the iMessage style pull-to-reveal timestamps feature for a personal project and decided to open source the category. :)
-
-
-Supported OS & SDK Versions
------------------------------
-
-* Supported build target - iOS 6.0
-* Earliest supported deployment target - iOS 6.0
-
-
-ARC Compatibility
-------------------
-
-The category will work correctly ONLY with ARC enabled.
+I recently needed to build the iMessage style pull-to-reveal timestamps feature for a personal project and decided to open source the implementation.
 
 
 Installation
 --------------
 
-To install, either copy the category `UITableView+SPXRevealAdditions.h` into your project or add it to your podfile.
+This project is now a Swift framework. So simply add
 
-pod 'SPXRevealableView'
+`pod 'SPXRevealableView'` -- Podfile
+
+Then import using
+
+`import RevealableCell` -- Swift
+`@import RevealableCell` -- ObjC
+
+at the top of your source file(s).
 
 
 Usage
 -------
 
-Using this component is almost completely drop in, just follow a few simple steps:
+In order to use RevealableCell in your application, follow the steps below:
 
-```ruby
-#import "UITableView+SPXRevealAdditions.h"
-...
-[self.tableView enableRevealableViewForDirection:SPXRevealableViewGestureDirectionLeft];
-cell.revealableView = [[UINib nibWithNibName:@"TimestampView" bundle:nil] instantiateWithOwner:nil options:nil].firstObject;
-```
-		
-You should call enable at a fairly early stage in your UITableView's lifecycle, ideally in `-viewDidLoad`
+1. Your cell must be a subclass of RevealableTableViewCell
+2. You must register a nib or a RevealableView subclass using:
 
-The revealableView size is based on the XIB it was loaded from. The height will always match the cell, but the width will be maintained from the views frame ;)
+   `tableView.registerNib(nib, forRevealableViewReuseIdentifier: "identifier")` or
+   `tableView.registerClass(revealableViewClass, forRevealableViewReuseIdentifier: "identifier")`
+   
+3. In `cellForRowAtIndexPath` you can dequeue and configure an instance using:
 
-To gain the benefits of reusable cells, I recommended setting the revealableView in your `-awakeFromNib` cell method, but you could declare it directly in your `-cellForRowAtIndexPath` method as is shown in the included demo.
+   ```swift
+   if let view = tableView.dequeueReusableRevealableViewWithIdentifier("identifier") as? MyRevealableView {
+     view.titleLabel.text = "" // configure
+     cell.setRevealableView(view, style: .Slide, direction: .Left)
+   }
+   ```
+    
+This new implementation, provides reusable views of the same type as well as allowing you to have
+different styles or directions for individual cells. 
+    
+Run this project, to see a demo similar to the iMessage app on your iOS device.
 
-That's it! It will automatically handle inserting the view into the cells, you have a nice property on each cell to make it simple to update and all gesture handling is done automatically for you just by including the class.
+Additional Info
+-------
 
+RevealableViews also support AutoLayout now, so if you've setup your constraints correctly, the views will auto-size their widths (per cell) for you. However, you can also specify a fixed width for each cell using
+
+`cell.revealableView.width = 100`
+
+Note: The height will always be the same as the cell and the position is based on the `.style` of the `RevealableView`
 
 Feel free to use in any way you see fit. Please try and reference me somewhere in your app if you use this in a production app and maybe even tell me about it via Twitter [@shaps](http://twitter.com/shaps) ;)
 
 
-![Screenshot](http://shaps.me/downloads/iMessageStyleReveal.jpg)
+![Screenshot](http://shaps.me/assets/img/blog/iMessageStyleReveal.jpg)
+
+Supported OS & SDK Versions
+-----------------------------
+
+* Supported build target - iOS 8.0
+* Earliest supported deployment target - iOS 8.0

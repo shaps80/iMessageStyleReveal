@@ -17,24 +17,75 @@ enum Cell: String {
 
 class ViewController: UITableViewController {
   
+  
+  
+  
+  
+  func configureCell(cell: TableViewCell, indexPath: NSIndexPath, message: Message) {
+    
+    /* 
+    
+    This demonstrates the usage of a RevealableCell
+    ---
+    1. Your cell must be a subclass of RevealableTableViewCell
+    2. You must register a nib or a RevealableView subclass using:
+       tableView.registerNib(nib, forRevealableViewReuseIdentifier: "identifier")
+       tableView.registerClass(revealableViewClass, forRevealableViewReuseIdentifier: "identifier")
+    3. In cellForRowAtIndexPath you can dequeue and configure an instance using:
+       if let view = tableView.dequeueReusableRevealableViewWithIdentifier("identifier") as? MyRevealableView {
+         view.titleLabel.text = ""
+         cell.setRevealableView(view, style: .Slide, direction: .Left)
+       }
+    
+    This new implementation, allows reusable revealableViews of the same type as well as allowing you to have
+    different styles/directions for individual cells. 
+    
+    Run this project, to see a demo similar to the iMessage app on your iOS device.
+    
+   */
+    
+    if let timeStampView = tableView.dequeueReusableRevealableViewWithIdentifier("timeStamp") as? TimestampView {
+      timeStampView.date = message.date
+      timeStampView.width = 55
+      cell.setRevealableView(timeStampView, style: message.cell == .Left ? .Over : .Slide)
+    }
+    
+    cell.messageLabel.text = message.text
+  }
+  
+  
+  
+  
+  
+  
   var messages = [Message]()
   
   override func viewDidLoad() {
     super.viewDidLoad()
-   
+    
     tableView.registerNib(UINib(nibName: "TimestampView", bundle: nil), forRevealableViewReuseIdentifier: "timeStamp")
     tableView.registerNib(UINib(nibName: "TimestampView", bundle: nil), forRevealableViewReuseIdentifier: "name")
     
     tableView.rowHeight = UITableViewAutomaticDimension
     
-    messages.append(Message(cell: .Left, date: NSDate(timeIntervalSinceNow: 60), text: "Do you know how to put an Ad on Craig's List?", name: "Francesco"))
-    messages.append(Message(cell: .Right, date: NSDate(timeIntervalSinceNow: 120), text: "Yes, its easy. Why?", name: "Shaps"))
-    messages.append(Message(cell: .Left, date: NSDate(timeIntervalSinceNow: 160), text: "We need a nurse to fuck my grandma at night", name: "Francesco"))
-    messages.append(Message(cell: .Right, date: NSDate(timeIntervalSinceNow: 240), text: "Oh my. Well lord knows you can find that, and more, on craigslist! Haha", name: "Shaps"))
-    messages.append(Message(cell: .Left, date: NSDate(timeIntervalSinceNow: 340), text: "lol no my grandma needs fuck at night", name: "Francesco"))
-    messages.append(Message(cell: .Right, date: NSDate(timeIntervalSinceNow: 400), text: "Oh, don't we all ;)", name: "Shaps"))
-    messages.append(Message(cell: .Left, date: NSDate(timeIntervalSinceNow: 550), text: "help! God damn it help! Auto correct sucks!", name: "Francesco"))
-    messages.append(Message(cell: .Right, date: NSDate(timeIntervalSinceNow: 600), text: "HAHAHAHA!", name: "Shaps"))
+    messages = [
+      Message(cell: .Left, date: NSDate(timeIntervalSinceNow: 60), text: "Do you know how to put an Ad on Craig's List?", name: "Francesco"),
+      Message(cell: .Right, date: NSDate(timeIntervalSinceNow: 120), text: "Yes, its easy. Why?", name: "Shaps"),
+      Message(cell: .Left, date: NSDate(timeIntervalSinceNow: 160), text: "We need a nurse to fuck my grandma at night", name: "Francesco"),
+      Message(cell: .Right, date: NSDate(timeIntervalSinceNow: 240), text: "Oh my. Well lord knows you can find that, and more, on craigslist! Haha", name: "Shaps"),
+      Message(cell: .Left, date: NSDate(timeIntervalSinceNow: 340), text: "lol no my grandma needs fuck at night", name: "Francesco"),
+      Message(cell: .Right, date: NSDate(timeIntervalSinceNow: 400), text: "Oh, don't we all ;)", name: "Shaps"),
+      Message(cell: .Left, date: NSDate(timeIntervalSinceNow: 550), text: "help! God damn it help! Auto correct sucks!", name: "Francesco"),
+      Message(cell: .Right, date: NSDate(timeIntervalSinceNow: 600), text: "HAHAHAHA!", name: "Shaps")
+    ]
+  }
+  
+  override func viewDidAppear(animated: Bool) {
+    super.viewDidAppear(animated)
+    
+    let controller = UIAlertController(title: "Welcome", message: "Swipe to the left to see it in action", preferredStyle: .Alert)
+    controller.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
+    presentViewController(controller, animated: true, completion: nil)
   }
   
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> RevealableTableViewCell {
@@ -57,16 +108,6 @@ class ViewController: UITableViewController {
     }
     
     return 50
-  }
-  
-  func configureCell(cell: TableViewCell, indexPath: NSIndexPath, message: Message) {
-    if let timeStampView = tableView.dequeueReusableRevealableViewWithIdentifier("timeStamp") as? TimestampView {
-      timeStampView.date = message.date
-      timeStampView.width = 55
-      cell.setRevealableView(timeStampView, style: message.cell == .Left ? .Over : .Slide)
-    }
-    
-    cell.messageLabel.text = message.text
   }
   
   override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
