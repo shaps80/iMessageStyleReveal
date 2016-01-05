@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		54580A681C39BEDF00A93AA1 /* TimestampView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54580A671C39BEDF00A93AA1 /* TimestampView.xib */; };
 		54580A6A1C39BF1A00A93AA1 /* TimestampView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54580A691C39BF1A00A93AA1 /* TimestampView.swift */; };
+		548EB8161C3B31DF0011F5FD /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548EB8151C3B31DF0011F5FD /* TableViewCell.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -30,6 +31,7 @@
 		54580A651C39BAB300A93AA1 /* RevealableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RevealableView.swift; sourceTree = "<group>"; };
 		54580A671C39BEDF00A93AA1 /* TimestampView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimestampView.xib; sourceTree = "<group>"; };
 		54580A691C39BF1A00A93AA1 /* TimestampView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimestampView.swift; sourceTree = "<group>"; };
+		548EB8151C3B31DF0011F5FD /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		54E0533E1C39B2E30091F295 /* RevealableTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RevealableTableViewCell.swift; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* RevealableCell_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RevealableCell_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				548EB8151C3B31DF0011F5FD /* TableViewCell.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				54580A671C39BEDF00A93AA1 /* TimestampView.xib */,
 				54580A691C39BF1A00A93AA1 /* TimestampView.swift */,
@@ -288,6 +291,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				548EB8161C3B31DF0011F5FD /* TableViewCell.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				54580A6A1C39BF1A00A93AA1 /* TimestampView.swift in Sources */,
 			);

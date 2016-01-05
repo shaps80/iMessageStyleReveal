@@ -10,9 +10,8 @@ import UIKit
 
 public class RevealableTableViewCell: UITableViewCell {
   
+  internal var horizontalConstraint: NSLayoutConstraint?
   internal var revealView: RevealableView?
-  internal var revealStyle: RevealStyle = .Slide
-  internal var revealDirection: RevealSwipeDirection = .Left
   internal var revealWidth: CGFloat = 0
   
   public override var selected: Bool {
@@ -53,8 +52,10 @@ public class RevealableTableViewCell: UITableViewCell {
     let topConstraint = NSLayoutConstraint(item: view, attribute: .Top, relatedBy: .Equal, toItem: self, attribute: .Top, multiplier: 1, constant: 0)
     let bottomConstraint = NSLayoutConstraint(item: view, attribute: .Bottom, relatedBy: .Equal, toItem: self, attribute: .Bottom, multiplier: 1, constant: 0)
     
-    let attribute: NSLayoutAttribute = direction == .Right ? .Left : .Right
-    let horizontalConstraint = NSLayoutConstraint(item: view, attribute: attribute, relatedBy: .Equal, toItem: self, attribute: attribute, multiplier: 1, constant: 0)
+    let viewAttribute: NSLayoutAttribute = direction == .Left ? .Left : .Right
+    let parentAttribute: NSLayoutAttribute = direction == .Left ? .Right : .Left
+    let horizontalConstraint = NSLayoutConstraint(item: view, attribute: viewAttribute, relatedBy: .Equal, toItem: self, attribute: parentAttribute, multiplier: 1, constant: 0)
+    self.horizontalConstraint = horizontalConstraint
     
     NSLayoutConstraint.activateConstraints([ topConstraint, bottomConstraint, horizontalConstraint ])
     

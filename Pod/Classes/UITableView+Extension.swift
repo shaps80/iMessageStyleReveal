@@ -12,9 +12,95 @@ import ObjectiveC
 struct AssociationKey {
   static var queues: UInt8 = 1
   static var registrations: UInt8 = 2
+  static var panGesture: UInt8 = 3
 }
 
-extension UITableView {
+extension UITableView: UIGestureRecognizerDelegate {
+  
+  private static var currentOffset: CGFloat = 0
+  private static var translationX: CGFloat = 0
+  
+  public override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
+    if context == &AssociationKey.panGesture && keyPath == "contentOffset" {
+      updateTableViewCellFrames()
+      return
+    }
+    
+    super.observeValueForKeyPath(keyPath, ofObject: object, change: change, context: context)
+  }
+  
+  private func updateTableViewCellFrames() {
+    for cell in visibleCells {
+      if let revealCell = cell as? RevealableTableViewCell {
+        if let revealView = revealCell.revealView {
+          var rect = cell.contentView.frame
+          var x = UITableView.currentOffset
+          
+          if revealView.direction == .Left {
+            x = max(x, -revealView.bounds.width)
+            x = min(x, 0)
+          } else {
+            x = max(x, 0)
+            x = min(x, revealView.bounds.width)
+          }
+          
+          if revealView.style == .Slide {
+            rect.origin.x = x;
+            cell.contentView.frame = rect;
+          }
+          
+          revealView.transform = CGAffineTransformMakeTranslation(x, 0)
+        }
+      }
+    }
+  }
+  
+  func handleRevealPan(gesture: UIPanGestureRecognizer) {
+    switch gesture.state {
+    case .Began:
+      addObserver(self, forKeyPath: "contentOffset", options: .New, context: &AssociationKey.panGesture)
+      break
+    case .Changed:
+      UITableView.translationX = gesture.translationInView(gesture.view).x
+      UITableView.currentOffset += UITableView.translationX
+      
+      gesture.setTranslation(CGPointZero, inView: gesture.view)
+      updateTableViewCellFrames()
+      break
+    default:
+      UIView.animateWithDuration(0.3, animations: { () -> Void in
+        UITableView.currentOffset = 0
+        self.updateTableViewCellFrames()
+      }, completion: { (finished: Bool) -> Void in
+        UITableView.translationX = 0
+      })
+      
+      removeObserver(self, forKeyPath: "contentOffset")
+    }
+  }
+  
+  public func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+    return true
+  }
+  
+  public override func gestureRecognizerShouldBegin(gestureRecognizer: UIGestureRecognizer) -> Bool {
+    if let gesture = gestureRecognizer as? UIPanGestureRecognizer where gesture == revealPanGesture {
+      let translation = gesture.translationInView(gesture.view);
+      return (fabs(translation.x) > fabs(translation.y)) && (gesture == revealPanGesture)
+    }
+    
+    return true
+  }
+  
+  private var revealPanGesture: UIPanGestureRecognizer {
+    return objc_getAssociatedObject(self, &AssociationKey.panGesture) as? UIPanGestureRecognizer ?? {
+      let associatedProperty = UIPanGestureRecognizer(target: self, action: "handleRevealPan:")
+      associatedProperty.delegate = self
+//      self.panGestureRecognizer.enabled = false
+      objc_setAssociatedObject(self, &AssociationKey.panGesture, associatedProperty, .OBJC_ASSOCIATION_RETAIN)
+      return associatedProperty
+    }()
+  }
   
   private var registrations: NSMutableDictionary {
     return objc_getAssociatedObject(self, &AssociationKey.registrations) as? NSMutableDictionary ?? {
@@ -76,6 +162,8 @@ extension UITableView {
       
       view.reuseIdentifier = identifier
       view.tableView = self
+      
+      addGestureRecognizer(revealPanGesture)
       return view
     }
     
@@ -85,8 +173,10 @@ extension UITableView {
         return nil
       }
       
-      
+      view.reuseIdentifier = identifier
       view.tableView = self
+      
+      addGestureRecognizer(revealPanGesture)
       return view
     }
     
