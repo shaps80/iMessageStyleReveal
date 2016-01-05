@@ -10,23 +10,32 @@
 #import "UITableView+SPXRevealAdditions.h"
 #import "LoremIpsum.h"
 
+@interface SPXRevealTableViewController ()
+@property (nonatomic, weak) IBOutlet UITableView *tableView;
+@property (nonatomic, weak) IBOutlet UIDatePicker *datePicker;
+@end
+
 @implementation SPXRevealTableViewController
 
 - (void)viewDidLoad
 {
   [super viewDidLoad];
   [self.tableView enableRevealableViewForDirection:SPXRevealableViewGestureDirectionLeft];
+  
+  UIEdgeInsets insets = self.tableView.contentInset;
+  insets.bottom = CGRectGetHeight(self.datePicker.bounds);
+  self.tableView.contentInset = insets;
+  self.tableView.scrollIndicatorInsets = insets;
+  
+  [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
   cell.textLabel.text = [LoremIpsum name];
+  cell.textLabel.backgroundColor = [UIColor clearColor];
   cell.revealableView = [[UINib nibWithNibName:@"TimestampView" bundle:nil] instantiateWithOwner:nil options:nil].firstObject;
-  cell.revealStyle = rand() % 2 ? SPXRevealableViewStyleOverlay : SPXRevealableViewStyleSlide;
-  
-  cell.textLabel.textAlignment = cell.revealStyle == SPXRevealableViewStyleSlide ? NSTextAlignmentRight : NSTextAlignmentLeft;
-  cell.selectionStyle = UITableViewCellSelectionStyleNone;
   
   return cell;
 }
