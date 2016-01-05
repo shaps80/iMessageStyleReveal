@@ -1,0 +1,17 @@
+PODS:
+  - LoremIpsum (1.0.0)
+  - RevealableCell (1.0)
+
+DEPENDENCIES:
+  - LoremIpsum
+  - RevealableCell (from `../`)
+
+EXTERNAL SOURCES:
+  RevealableCell:
+    :path: ../
+
+SPEC CHECKSUMS:
+  LoremIpsum: 9029c55d36501b2ee0b05cc9ecda11d3a0479160
+  RevealableCell: 4eeabd069739d42ef3ea25f8ebc5fca08ef01b5e
+
+COCOAPODS: 0.39.0
