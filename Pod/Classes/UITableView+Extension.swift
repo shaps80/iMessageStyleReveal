@@ -80,7 +80,11 @@ extension UITableView: UIGestureRecognizerDelegate {
   }
   
   public func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
-    return true
+    if gestureRecognizer == revealPanGesture || otherGestureRecognizer == revealPanGesture {
+        return true
+    }
+
+    return false
   }
   
   public override func gestureRecognizerShouldBegin(gestureRecognizer: UIGestureRecognizer) -> Bool {
