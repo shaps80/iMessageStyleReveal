@@ -13,14 +13,14 @@ class TimestampView: RevealableView {
 
   @IBOutlet var titleLabel: UILabel!
   
-  var date: NSDate = NSDate() {
+  var date: Date = Date() {
     didSet {
-      titleLabel.text = dateFormatter.stringFromDate(self.date)
+      titleLabel.text = dateFormatter.string(from: self.date as Date)
     }
   }
   
-  private var dateFormatter: NSDateFormatter = {
-    let formatter = NSDateFormatter()
+  private var dateFormatter: DateFormatter = {
+    let formatter = DateFormatter()
     formatter.dateFormat = "HH:mm"
     return formatter
   }()

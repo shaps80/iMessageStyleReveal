@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CDF682E45BA853ECA658CD1D1FFD1747"
-               BuildableName = "RevealableCell.framework"
-               BlueprintName = "RevealableCell"
+               BlueprintIdentifier = "A5DF3319BA7B020778F7D807A2EEB9F1"
+               BuildableName = "Pods.framework"
+               BlueprintName = "Pods"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CDF682E45BA853ECA658CD1D1FFD1747"
-            BuildableName = "RevealableCell.framework"
-            BlueprintName = "RevealableCell"
+            BlueprintIdentifier = "A5DF3319BA7B020778F7D807A2EEB9F1"
+            BuildableName = "Pods.framework"
+            BlueprintName = "Pods"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -60,6 +60,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "A5DF3319BA7B020778F7D807A2EEB9F1"
+            BuildableName = "Pods.framework"
+            BlueprintName = "Pods"
+            ReferencedContainer = "container:Pods.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

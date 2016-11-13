@@ -17,10 +17,10 @@ class TableViewCell: RevealableTableViewCell {
     super.awakeFromNib()
     
     backgroundView = UIView()
-    backgroundView?.backgroundColor = UIColor.clearColor()
+    backgroundView?.backgroundColor = UIColor.clear
     
-    backgroundColor = UIColor.clearColor()
-    contentView.backgroundColor = UIColor.clearColor()
+    backgroundColor = UIColor.clear
+    contentView.backgroundColor = UIColor.clear
   }
 
 }
