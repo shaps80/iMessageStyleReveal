@@ -7,16 +7,16 @@ I recently needed to build the iMessage style pull-to-reveal timestamps feature 
 Installation
 --------------
 
-This project is now a Swift framework. So simply add
+Simply add the following to your Podfile:
 
-`pod 'SPXRevealableView'` -- Podfile
+`pod 'RevealableCell'`
 
-Then import using
+Then add the followig import at the top of your source file(s):
 
-`import RevealableCell` -- Swift
-`@import RevealableCell` -- ObjC
-
-at the top of your source file(s).
+Swift
+`import RevealableCell`
+Obj-C
+`@import RevealableCell`
 
 
 Usage

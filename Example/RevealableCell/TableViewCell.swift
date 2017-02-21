@@ -10,39 +10,39 @@ import UIKit
 import RevealableCell
 
 class TableViewCell: RevealableTableViewCell {
-
-  @IBOutlet var messageLabel: UILabel!
-  
-  override func awakeFromNib() {
-    super.awakeFromNib()
     
-    backgroundView = UIView()
-    backgroundView?.backgroundColor = UIColor.clearColor()
+    @IBOutlet var messageLabel: UILabel!
     
-    backgroundColor = UIColor.clearColor()
-    contentView.backgroundColor = UIColor.clearColor()
-  }
-
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        backgroundView = UIView()
+        backgroundView?.backgroundColor = UIColor.clearColor()
+        
+        backgroundColor = UIColor.clearColor()
+        contentView.backgroundColor = UIColor.clearColor()
+    }
+    
 }
 
 @IBDesignable final class RoundedView: UIView {
-  
-  @IBInspectable var cornerRadius: CGFloat {
-    get {
-      return layer.cornerRadius
+    
+    @IBInspectable var cornerRadius: CGFloat {
+        get {
+            return layer.cornerRadius
+        }
+        set {
+            layer.cornerRadius = newValue
+        }
     }
-    set {
-      layer.cornerRadius = newValue
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        cornerRadius = 5
     }
-  }
-  
-  override init(frame: CGRect) {
-    super.init(frame: frame)
-    cornerRadius = 5
-  }
-  
-  required init?(coder aDecoder: NSCoder) {
-    super.init(coder: aDecoder)
-    cornerRadius = 5
-  }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        cornerRadius = 5
+    }
 }
