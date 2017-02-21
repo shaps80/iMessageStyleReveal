@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name         = "RevealableCell"
-    s.version      = "1.0"
+    s.version      = "1.1"
     s.summary      = "iMessage style pull-to-reveal timestamps."
     s.homepage     = "http://shaps.me/blog/imessage-style-reveal/"
     s.screenshots  = "http://shaps.me/assets/img/blog/iMessageStyleReveal@2x.jpg"
