@@ -26,7 +26,7 @@ open class RevealableView: UIControl {
         }
     }
     
-    internal var tableView: UITableView?
+    internal weak var tableView: UITableView?
     open internal(set) var reuseIdentifier: String!
     open internal(set) var style: RevealStyle = .slide
     open internal(set) var direction: RevealSwipeDirection = .left
