@@ -9,6 +9,20 @@
 import UIKit
 
 public enum RevealStyle {
+<<<<<<< HEAD
+    case Slide
+    case Over
+}
+
+public enum RevealSwipeDirection {
+    case Left
+    case Right
+}
+
+public class RevealableView: UIControl {
+    
+    @IBInspectable public var width: CGFloat = 0 {
+=======
     case slide
     case over
 }
@@ -21,22 +35,35 @@ public enum RevealSwipeDirection {
 open class RevealableView: UIControl {
     
     @IBInspectable open var width: CGFloat = 0 {
+>>>>>>> 41ca756e031bd5a48d2ac6613de109f0e5b27d39
         didSet {
             prepareWidthConstraint()
         }
     }
     
     internal var tableView: UITableView?
+<<<<<<< HEAD
+    public internal(set) var reuseIdentifier: String!
+    public internal(set) var style: RevealStyle = .Slide
+    public internal(set) var direction: RevealSwipeDirection = .Left
+    
+    private var widthConstraint: NSLayoutConstraint?
+=======
     open internal(set) var reuseIdentifier: String!
     open internal(set) var style: RevealStyle = .slide
     open internal(set) var direction: RevealSwipeDirection = .left
     
     fileprivate var widthConstraint: NSLayoutConstraint?
+>>>>>>> 41ca756e031bd5a48d2ac6613de109f0e5b27d39
     
     /**
      Ensure to call super.didMoveToSuperview in your subclasses!
      */
+<<<<<<< HEAD
+    public override func didMoveToSuperview() {
+=======
     open override func didMoveToSuperview() {
+>>>>>>> 41ca756e031bd5a48d2ac6613de109f0e5b27d39
         if self.superview != nil {
             prepareWidthConstraint()
         }
@@ -48,6 +75,16 @@ open class RevealableView: UIControl {
         tableView?.prepareRevealableViewForReuse(self)
     }
     
+<<<<<<< HEAD
+    private func prepareWidthConstraint() {
+        if width > 0 {
+            let constraint = NSLayoutConstraint(item: self, attribute: .Width, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: width)
+            NSLayoutConstraint.activateConstraints([constraint])
+            widthConstraint = constraint
+        } else {
+            if let constraint = widthConstraint {
+                NSLayoutConstraint.deactivateConstraints([constraint])
+=======
     fileprivate func prepareWidthConstraint() {
         if width > 0 {
             let constraint = NSLayoutConstraint(item: self, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: width)
@@ -56,6 +93,7 @@ open class RevealableView: UIControl {
         } else {
             if let constraint = widthConstraint {
                 NSLayoutConstraint.deactivate([constraint])
+>>>>>>> 41ca756e031bd5a48d2ac6613de109f0e5b27d39
             }
         }
         

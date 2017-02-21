@@ -188,8 +188,13 @@
 			attributes = {
 				LastSwiftMigration = 0730;
 				LastSwiftUpdateCheck = 0720;
+<<<<<<< HEAD
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "152 Percent";
+=======
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = CocoaPods;
+>>>>>>> 41ca756e031bd5a48d2ac6613de109f0e5b27d39
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -409,7 +414,11 @@
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = uk.co.snippex.ios.RevealableCell;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+<<<<<<< HEAD
+				SWIFT_VERSION = 2.3;
+=======
 				SWIFT_VERSION = 3.0.1;
+>>>>>>> 41ca756e031bd5a48d2ac6613de109f0e5b27d39
 			};
 			name = Debug;
 		};
@@ -423,7 +432,11 @@
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = uk.co.snippex.ios.RevealableCell;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+<<<<<<< HEAD
+				SWIFT_VERSION = 2.3;
+=======
 				SWIFT_VERSION = 3.0.1;
+>>>>>>> 41ca756e031bd5a48d2ac6613de109f0e5b27d39
 			};
 			name = Release;
 		};

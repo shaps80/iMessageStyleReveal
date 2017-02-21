@@ -17,12 +17,32 @@ enum Cell: String {
 
 class ViewController: UITableViewController {
     
-    func configure(cell: TableViewCell, at indexPath: IndexPath, with message: Message) {
+<<<<<<< HEAD
+    
+    
+    
+    
+    func configureCell(cell: TableViewCell, indexPath: NSIndexPath, message: Message) {
+=======
+    func configureCell(cell: TableViewCell, indexPath: IndexPath, message: Message) {
         
+>>>>>>> 41ca756e031bd5a48d2ac6613de109f0e5b27d39
         /*
          
          This demonstrates the usage of a RevealableCell
          ---
+<<<<<<< HEAD
+         
+         1. Your cell must be a subclass of RevealableTableViewCell
+         2. You must register a nib or a RevealableView subclass using:
+            tableView.registerNib(nib, forRevealableViewReuseIdentifier: "identifier")
+            tableView.registerClass(revealableViewClass, forRevealableViewReuseIdentifier: "identifier")
+         3. In cellForRowAtIndexPath you can dequeue and configure an instance using:
+            if let view = tableView.dequeueReusableRevealableViewWithIdentifier("identifier") as? MyRevealableView {
+               view.titleLabel.text = ""
+               cell.setRevealableView(view, style: .Slide, direction: .Left)
+            }
+=======
          1. Your cell must be a subclass of RevealableTableViewCell
          2. You must register a nib or a RevealableView subclass using:
          tableView.registerNib(nib, forRevealableViewReuseIdentifier: "identifier")
@@ -32,6 +52,7 @@ class ViewController: UITableViewController {
          view.titleLabel.text = ""
          cell.setRevealableView(view, style: .Slide, direction: .Left)
          }
+>>>>>>> 41ca756e031bd5a48d2ac6613de109f0e5b27d39
          
          This new implementation, allows reusable revealableViews of the same type as well as allowing you to have
          different styles/directions for individual cells.
@@ -40,16 +61,21 @@ class ViewController: UITableViewController {
          
          */
         
-        if let timeStampView =
-            tableView.dequeueReusableRevealableView(withIdentifier: "timestamp") as? TimestampView {
+        if let timeStampView = tableView.dequeueReusableRevealableViewWithIdentifier("timeStamp") as? TimestampView {
+<<<<<<< HEAD
+            timeStampView.date = message.date
+            timeStampView.width = 55
+            cell.setRevealableView(timeStampView, style: message.cell == .Left ? .Over : .Slide)
+=======
             timeStampView.date = message.date as Date
             timeStampView.width = 55
             
             if message.cell == .Left {
                 cell.setRevealableView(timeStampView, style: .over)
-            } else {
+            }else {
                 cell.setRevealableView(timeStampView, style: .slide)
             }
+>>>>>>> 41ca756e031bd5a48d2ac6613de109f0e5b27d39
         }
         
         cell.messageLabel.text = message.text
@@ -80,6 +106,35 @@ class ViewController: UITableViewController {
             Message(cell: .Left, date: NSDate(timeIntervalSinceNow: 550), text: "help! God damn it help! Auto correct sucks!", name: "Francesco"),
             Message(cell: .Right, date: NSDate(timeIntervalSinceNow: 600), text: "HAHAHAHA!", name: "Shaps")
         ]
+<<<<<<< HEAD
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let controller = UIAlertController(title: "Welcome", message: "Swipe to the left to see it in action", preferredStyle: .Alert)
+        controller.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
+        presentViewController(controller, animated: true, completion: nil)
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> RevealableTableViewCell {
+        let message = messages[indexPath.item]
+        let cell = tableView.dequeueReusableCellWithIdentifier(message.cell.rawValue, forIndexPath: indexPath) as! TableViewCell
+        configureCell(cell, indexPath: indexPath, message: message)
+        return cell
+    }
+    
+    override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 49
+    }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        let message = messages[indexPath.item]
+        
+        if let cell = tableView.dequeueReusableCellWithIdentifier(message.cell.rawValue) as? TableViewCell {
+            configureCell(cell, indexPath: indexPath, message: message)
+            return cell.contentView.systemLayoutSizeFittingSize(UILayoutFittingExpandedSize).height
+=======
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -98,7 +153,7 @@ class ViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> RevealableTableViewCell {
         let message = messages[indexPath.item]
         let cell = tableView.dequeueReusableCell(withIdentifier: message.cell.rawValue, for: indexPath as IndexPath) as! TableViewCell
-        configure(cell: cell, at: indexPath, with: message)
+        configureCell(cell: cell, indexPath: indexPath, message: message)
         return cell
     }
     
@@ -110,18 +165,27 @@ class ViewController: UITableViewController {
         let message = messages[indexPath.item]
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: message.cell.rawValue) as? TableViewCell {
-            configure(cell: cell, at: indexPath, with: message)
+            configureCell(cell: cell, indexPath: indexPath, message: message)
             return cell.contentView.systemLayoutSizeFitting(UILayoutFittingExpandedSize).height
+>>>>>>> 41ca756e031bd5a48d2ac6613de109f0e5b27d39
         }
         
         return 50
     }
     
+<<<<<<< HEAD
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Today"
+    }
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+=======
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "Today"
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+>>>>>>> 41ca756e031bd5a48d2ac6613de109f0e5b27d39
         return messages.count
     }
     

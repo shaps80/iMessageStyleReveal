@@ -9,22 +9,6 @@
 import UIKit
 import RevealableCell
 
-class TableViewCell: RevealableTableViewCell {
-    
-    @IBOutlet var messageLabel: UILabel!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-        backgroundView = UIView()
-        backgroundView?.backgroundColor = UIColor.clearColor()
-        
-        backgroundColor = UIColor.clearColor()
-        contentView.backgroundColor = UIColor.clearColor()
-    }
-    
-}
-
 @IBDesignable final class RoundedView: UIView {
     
     @IBInspectable var cornerRadius: CGFloat {
@@ -45,4 +29,10 @@ class TableViewCell: RevealableTableViewCell {
         super.init(coder: aDecoder)
         cornerRadius = 5
     }
+}
+
+final class TableViewCell: RevealableTableViewCell {
+    
+    @IBOutlet weak var messageLabel: UILabel!
+    
 }
