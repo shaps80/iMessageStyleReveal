@@ -17,26 +17,26 @@ struct AssociationKey {
 
 extension UITableView: UIGestureRecognizerDelegate {
     
-    private static var currentOffset: CGFloat = 0
-    private static var translationX: CGFloat = 0
+    fileprivate static var currentOffset: CGFloat = 0
+    fileprivate static var translationX: CGFloat = 0
     
-    public override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
+    open override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if context == &AssociationKey.panGesture && keyPath == "contentOffset" {
             updateTableViewCellFrames()
             return
         }
         
-        super.observeValueForKeyPath(keyPath, ofObject: object, change: change, context: context)
+        super.observeValue(forKeyPath: keyPath, of: object, change: change, context: context)
     }
     
-    private func updateTableViewCellFrames() {
+    fileprivate func updateTableViewCellFrames() {
         for cell in visibleCells {
             if let revealCell = cell as? RevealableTableViewCell {
                 if let revealView = revealCell.revealView {
                     var rect = cell.contentView.frame
                     var x = UITableView.currentOffset
                     
-                    if revealView.direction == .Left {
+                    if revealView.direction == .left {
                         x = max(x, -revealView.bounds.width)
                         x = min(x, 0)
                     } else {
@@ -44,57 +44,57 @@ extension UITableView: UIGestureRecognizerDelegate {
                         x = min(x, revealView.bounds.width)
                     }
                     
-                    if revealView.style == .Slide {
+                    if revealView.style == .slide {
                         rect.origin.x = x;
                         cell.contentView.frame = rect;
                     }
                     
-                    revealView.transform = CGAffineTransformMakeTranslation(x, 0)
+                    revealView.transform = CGAffineTransform(translationX: x, y: 0)
                 }
             }
         }
     }
     
-    func handleRevealPan(gesture: UIPanGestureRecognizer) {
+    func handleRevealPan(_ gesture: UIPanGestureRecognizer) {
         switch gesture.state {
-        case .Began:
-            addObserver(self, forKeyPath: "contentOffset", options: .New, context: &AssociationKey.panGesture)
+        case .began:
+            addObserver(self, forKeyPath: "contentOffset", options: .new, context: &AssociationKey.panGesture)
             break
-        case .Changed:
-            UITableView.translationX = gesture.translationInView(gesture.view).x
+        case .changed:
+            UITableView.translationX = gesture.translation(in: gesture.view).x
             UITableView.currentOffset += UITableView.translationX
             
-            gesture.setTranslation(CGPointZero, inView: gesture.view)
+            gesture.setTranslation(CGPoint.zero, in: gesture.view)
             updateTableViewCellFrames()
             break
         default:
-            UIView.animateWithDuration(0.3, animations: { () -> Void in
+            UIView.animate(withDuration: 0.3, animations: { () -> Void in
                 UITableView.currentOffset = 0
                 self.updateTableViewCellFrames()
-                }, completion: { (finished: Bool) -> Void in
-                    UITableView.translationX = 0
+            }, completion: { (finished: Bool) -> Void in
+                UITableView.translationX = 0
             })
             
             removeObserver(self, forKeyPath: "contentOffset")
         }
     }
     
-    public func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
     }
     
-    public override func gestureRecognizerShouldBegin(gestureRecognizer: UIGestureRecognizer) -> Bool {
-        if let gesture = gestureRecognizer as? UIPanGestureRecognizer where gesture == revealPanGesture {
-            let translation = gesture.translationInView(gesture.view);
+    open override func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        if let gesture = gestureRecognizer as? UIPanGestureRecognizer, gesture == revealPanGesture {
+            let translation = gesture.translation(in: gesture.view);
             return (fabs(translation.x) > fabs(translation.y)) && (gesture == revealPanGesture)
         }
         
         return true
     }
     
-    private var revealPanGesture: UIPanGestureRecognizer {
+    fileprivate var revealPanGesture: UIPanGestureRecognizer {
         return objc_getAssociatedObject(self, &AssociationKey.panGesture) as? UIPanGestureRecognizer ?? {
-            let associatedProperty = UIPanGestureRecognizer(target: self, action: "handleRevealPan:")
+            let associatedProperty = UIPanGestureRecognizer(target: self, action: #selector(UITableView.handleRevealPan(_:)))
             associatedProperty.delegate = self
             //      self.panGestureRecognizer.enabled = false
             objc_setAssociatedObject(self, &AssociationKey.panGesture, associatedProperty, .OBJC_ASSOCIATION_RETAIN)
@@ -102,7 +102,7 @@ extension UITableView: UIGestureRecognizerDelegate {
             }()
     }
     
-    private var registrations: NSMutableDictionary {
+    fileprivate var registrations: NSMutableDictionary {
         return objc_getAssociatedObject(self, &AssociationKey.registrations) as? NSMutableDictionary ?? {
             let associatedProperty = NSMutableDictionary()
             objc_setAssociatedObject(self, &AssociationKey.registrations, associatedProperty, .OBJC_ASSOCIATION_RETAIN)
@@ -110,7 +110,7 @@ extension UITableView: UIGestureRecognizerDelegate {
             }()
     }
     
-    private var reuseQueues: RevealableViewsReuseQueues {
+    fileprivate var reuseQueues: RevealableViewsReuseQueues {
         return objc_getAssociatedObject(self, &AssociationKey.queues) as? RevealableViewsReuseQueues ?? {
             let associatedProperty = RevealableViewsReuseQueues()
             objc_setAssociatedObject(self, &AssociationKey.queues, associatedProperty, .OBJC_ASSOCIATION_RETAIN)
@@ -118,7 +118,7 @@ extension UITableView: UIGestureRecognizerDelegate {
             }()
     }
     
-    public func registerNib(nib: UINib, forRevealableViewReuseIdentifier identifier: String) {
+    public func registerNib(_ nib: UINib, forRevealableViewReuseIdentifier identifier: String) {
         let regs = registrations
         
         guard regs[identifier] == nil else {
@@ -145,7 +145,7 @@ extension UITableView: UIGestureRecognizerDelegate {
         regs[identifier] = viewClass
     }
     
-    public func dequeueReusableRevealableViewWithIdentifier(identifier: String) -> RevealableView? {
+    public func dequeueReusableRevealableView(withIdentifier identifier: String) -> RevealableView? {
         let queue = reuseQueues.queueForIdentifier(identifier)
         
         if let view = queue.dequeueView() {
@@ -155,7 +155,7 @@ extension UITableView: UIGestureRecognizerDelegate {
         let regs = registrations
         
         if let nib = regs[identifier] as? UINib {
-            guard let view = nib.instantiateWithOwner(nil, options: nil).first as? RevealableView else {
+            guard let view = nib.instantiate(withOwner: nil, options: nil).first as? RevealableView else {
                 print("The view returned from NIB: '\(nib)' is not a subclass of RevealableView!")
                 return nil
             }
@@ -183,7 +183,7 @@ extension UITableView: UIGestureRecognizerDelegate {
         return nil
     }
     
-    internal func prepareRevealableViewForReuse(view: RevealableView) {
+    internal func prepareRevealableViewForReuse(_ view: RevealableView) {
         view.removeFromSuperview()
         let queue = reuseQueues.queueForIdentifier(view.reuseIdentifier)
         queue.enqueue(view)
@@ -193,9 +193,9 @@ extension UITableView: UIGestureRecognizerDelegate {
 
 private final class RevealableViewsReuseQueues: NSObject {
     
-    private var queues: [String: RevealableViewsReuseQueue]
+    fileprivate var queues: [String: RevealableViewsReuseQueue]
     
-    private func queueForIdentifier(identifier: String) -> RevealableViewsReuseQueue {
+    fileprivate func queueForIdentifier(_ identifier: String) -> RevealableViewsReuseQueue {
         var queue = queues[identifier]
         
         if queue == nil {
@@ -214,18 +214,18 @@ private final class RevealableViewsReuseQueues: NSObject {
 
 private final class RevealableViewsReuseQueue: NSObject {
     
-    private var identifier: String
-    private var views = [RevealableView]()
+    fileprivate var identifier: String
+    fileprivate var views = [RevealableView]()
     
-    private init(identifier: String) {
+    fileprivate init(identifier: String) {
         self.identifier = identifier
     }
     
-    private func enqueue(view: RevealableView) {
+    fileprivate func enqueue(_ view: RevealableView) {
         views.append(view)
     }
     
-    private func dequeueView() -> RevealableView? {
+    fileprivate func dequeueView() -> RevealableView? {
         guard views.count > 0 else {
             return nil
         }

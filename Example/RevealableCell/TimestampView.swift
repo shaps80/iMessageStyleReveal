@@ -10,19 +10,19 @@ import UIKit
 import RevealableCell
 
 class TimestampView: RevealableView {
-    
-    @IBOutlet var titleLabel: UILabel!
-    
-    var date: NSDate = NSDate() {
-        didSet {
-            titleLabel.text = dateFormatter.stringFromDate(self.date)
-        }
+
+  @IBOutlet var titleLabel: UILabel!
+  
+  var date: Date = Date() {
+    didSet {
+      titleLabel.text = dateFormatter.string(from: self.date as Date)
     }
-    
-    private var dateFormatter: NSDateFormatter = {
-        let formatter = NSDateFormatter()
-        formatter.dateFormat = "HH:mm"
-        return formatter
-    }()
-    
+  }
+  
+  private var dateFormatter: DateFormatter = {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "HH:mm"
+    return formatter
+  }()
+
 }

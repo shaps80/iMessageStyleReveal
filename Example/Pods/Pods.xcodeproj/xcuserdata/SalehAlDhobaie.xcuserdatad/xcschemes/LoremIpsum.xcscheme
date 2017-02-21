@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DF64567535F8487A35F8788784C7D78C"
-               BuildableName = "Pods_RevealableCell_Example.framework"
-               BlueprintName = "Pods-RevealableCell_Example"
+               BlueprintIdentifier = "AC8432121E84B3F4C381F4D5E457C765"
+               BuildableName = "LoremIpsum.framework"
+               BlueprintName = "LoremIpsum"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "DF64567535F8487A35F8788784C7D78C"
-            BuildableName = "Pods_RevealableCell_Example.framework"
-            BlueprintName = "Pods-RevealableCell_Example"
+            BlueprintIdentifier = "AC8432121E84B3F4C381F4D5E457C765"
+            BuildableName = "LoremIpsum.framework"
+            BlueprintName = "LoremIpsum"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -60,6 +60,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "AC8432121E84B3F4C381F4D5E457C765"
+            BuildableName = "LoremIpsum.framework"
+            BlueprintName = "LoremIpsum"
+            ReferencedContainer = "container:Pods.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

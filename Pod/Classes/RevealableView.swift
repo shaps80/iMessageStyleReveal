@@ -9,34 +9,34 @@
 import UIKit
 
 public enum RevealStyle {
-    case Slide
-    case Over
+    case slide
+    case over
 }
 
 public enum RevealSwipeDirection {
-    case Left
-    case Right
+    case left
+    case right
 }
 
-public class RevealableView: UIControl {
+open class RevealableView: UIControl {
     
-    @IBInspectable public var width: CGFloat = 0 {
+    @IBInspectable open var width: CGFloat = 0 {
         didSet {
             prepareWidthConstraint()
         }
     }
     
     internal var tableView: UITableView?
-    public internal(set) var reuseIdentifier: String!
-    public internal(set) var style: RevealStyle = .Slide
-    public internal(set) var direction: RevealSwipeDirection = .Left
+    open internal(set) var reuseIdentifier: String!
+    open internal(set) var style: RevealStyle = .slide
+    open internal(set) var direction: RevealSwipeDirection = .left
     
-    private var widthConstraint: NSLayoutConstraint?
+    fileprivate var widthConstraint: NSLayoutConstraint?
     
     /**
      Ensure to call super.didMoveToSuperview in your subclasses!
      */
-    public override func didMoveToSuperview() {
+    open override func didMoveToSuperview() {
         if self.superview != nil {
             prepareWidthConstraint()
         }
@@ -48,14 +48,14 @@ public class RevealableView: UIControl {
         tableView?.prepareRevealableViewForReuse(self)
     }
     
-    private func prepareWidthConstraint() {
+    fileprivate func prepareWidthConstraint() {
         if width > 0 {
-            let constraint = NSLayoutConstraint(item: self, attribute: .Width, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: width)
-            NSLayoutConstraint.activateConstraints([constraint])
+            let constraint = NSLayoutConstraint(item: self, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: width)
+            NSLayoutConstraint.activate([constraint])
             widthConstraint = constraint
         } else {
             if let constraint = widthConstraint {
-                NSLayoutConstraint.deactivateConstraints([constraint])
+                NSLayoutConstraint.deactivate([constraint])
             }
         }
         

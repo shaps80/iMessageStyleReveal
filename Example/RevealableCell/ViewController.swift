@@ -17,25 +17,21 @@ enum Cell: String {
 
 class ViewController: UITableViewController {
     
-    
-    
-    
-    
-    func configureCell(cell: TableViewCell, indexPath: NSIndexPath, message: Message) {
+    func configure(cell: TableViewCell, at indexPath: IndexPath, with message: Message) {
+        
         /*
          
          This demonstrates the usage of a RevealableCell
          ---
-         
          1. Your cell must be a subclass of RevealableTableViewCell
          2. You must register a nib or a RevealableView subclass using:
-            tableView.registerNib(nib, forRevealableViewReuseIdentifier: "identifier")
-            tableView.registerClass(revealableViewClass, forRevealableViewReuseIdentifier: "identifier")
+         tableView.registerNib(nib, forRevealableViewReuseIdentifier: "identifier")
+         tableView.registerClass(revealableViewClass, forRevealableViewReuseIdentifier: "identifier")
          3. In cellForRowAtIndexPath you can dequeue and configure an instance using:
-            if let view = tableView.dequeueReusableRevealableViewWithIdentifier("identifier") as? MyRevealableView {
-               view.titleLabel.text = ""
-               cell.setRevealableView(view, style: .Slide, direction: .Left)
-            }
+         if let view = tableView.dequeueReusableRevealableViewWithIdentifier("identifier") as? MyRevealableView {
+         view.titleLabel.text = ""
+         cell.setRevealableView(view, style: .Slide, direction: .Left)
+         }
          
          This new implementation, allows reusable revealableViews of the same type as well as allowing you to have
          different styles/directions for individual cells.
@@ -44,10 +40,16 @@ class ViewController: UITableViewController {
          
          */
         
-        if let timeStampView = tableView.dequeueReusableRevealableViewWithIdentifier("timeStamp") as? TimestampView {
-            timeStampView.date = message.date
+        if let timeStampView =
+            tableView.dequeueReusableRevealableView(withIdentifier: "timestamp") as? TimestampView {
+            timeStampView.date = message.date as Date
             timeStampView.width = 55
-            cell.setRevealableView(timeStampView, style: message.cell == .Left ? .Over : .Slide)
+            
+            if message.cell == .Left {
+                cell.setRevealableView(timeStampView, style: .over)
+            } else {
+                cell.setRevealableView(timeStampView, style: .slide)
+            }
         }
         
         cell.messageLabel.text = message.text
@@ -80,41 +82,46 @@ class ViewController: UITableViewController {
         ]
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        let controller = UIAlertController(title: "Welcome", message: "Swipe to the left to see it in action", preferredStyle: .Alert)
-        controller.addAction(UIAlertAction(title: "OK", style: .Cancel, handler: nil))
-        presentViewController(controller, animated: true, completion: nil)
+        let controller = UIAlertController(title: "Welcome", message: "Swipe to the left to see it in action", preferredStyle: .alert)
+        controller.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        present(controller, animated: true, completion: nil)
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> RevealableTableViewCell {
+    
+    /*func tableView(_ tableView: UITableView, cellForRowAtIndexPath indexPath: IndexPath) -> UITableViewCell {
+        
+    }*/
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> RevealableTableViewCell {
         let message = messages[indexPath.item]
-        let cell = tableView.dequeueReusableCellWithIdentifier(message.cell.rawValue, forIndexPath: indexPath) as! TableViewCell
-        configureCell(cell, indexPath: indexPath, message: message)
+        let cell = tableView.dequeueReusableCell(withIdentifier: message.cell.rawValue, for: indexPath as IndexPath) as! TableViewCell
+        configure(cell: cell, at: indexPath, with: message)
         return cell
     }
     
-    override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return 49
     }
     
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let message = messages[indexPath.item]
         
-        if let cell = tableView.dequeueReusableCellWithIdentifier(message.cell.rawValue) as? TableViewCell {
-            configureCell(cell, indexPath: indexPath, message: message)
-            return cell.contentView.systemLayoutSizeFittingSize(UILayoutFittingExpandedSize).height
+        if let cell = tableView.dequeueReusableCell(withIdentifier: message.cell.rawValue) as? TableViewCell {
+            configure(cell: cell, at: indexPath, with: message)
+            return cell.contentView.systemLayoutSizeFitting(UILayoutFittingExpandedSize).height
         }
         
         return 50
     }
     
-    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "Today"
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return messages.count
     }
     
