@@ -26,15 +26,16 @@ class ViewController: UITableViewController {
          
          This demonstrates the usage of a RevealableCell
          ---
+         
          1. Your cell must be a subclass of RevealableTableViewCell
          2. You must register a nib or a RevealableView subclass using:
-         tableView.registerNib(nib, forRevealableViewReuseIdentifier: "identifier")
-         tableView.registerClass(revealableViewClass, forRevealableViewReuseIdentifier: "identifier")
+            tableView.registerNib(nib, forRevealableViewReuseIdentifier: "identifier")
+            tableView.registerClass(revealableViewClass, forRevealableViewReuseIdentifier: "identifier")
          3. In cellForRowAtIndexPath you can dequeue and configure an instance using:
-         if let view = tableView.dequeueReusableRevealableViewWithIdentifier("identifier") as? MyRevealableView {
-         view.titleLabel.text = ""
-         cell.setRevealableView(view, style: .Slide, direction: .Left)
-         }
+            if let view = tableView.dequeueReusableRevealableViewWithIdentifier("identifier") as? MyRevealableView {
+               view.titleLabel.text = ""
+               cell.setRevealableView(view, style: .Slide, direction: .Left)
+            }
          
          This new implementation, allows reusable revealableViews of the same type as well as allowing you to have
          different styles/directions for individual cells.
