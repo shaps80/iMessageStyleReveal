@@ -25,13 +25,13 @@ class ViewController: UITableViewController {
          ---
          1. Your cell must be a subclass of RevealableTableViewCell
          2. You must register a nib or a RevealableView subclass using:
-         tableView.registerNib(nib, forRevealableViewReuseIdentifier: "identifier")
-         tableView.registerClass(revealableViewClass, forRevealableViewReuseIdentifier: "identifier")
+            tableView.registerNib(nib, forRevealableViewReuseIdentifier: "identifier")
+            tableView.registerClass(revealableViewClass, forRevealableViewReuseIdentifier: "identifier")
          3. In cellForRowAtIndexPath you can dequeue and configure an instance using:
-         if let view = tableView.dequeueReusableRevealableViewWithIdentifier("identifier") as? MyRevealableView {
-         view.titleLabel.text = ""
-         cell.setRevealableView(view, style: .Slide, direction: .Left)
-         }
+            if let view = tableView.dequeueReusableRevealableViewWithIdentifier("identifier") as? MyRevealableView {
+                view.titleLabel.text = ""
+                cell.setRevealableView(view, style: .Slide, direction: .Left)
+            }
          
          This new implementation, allows reusable revealableViews of the same type as well as allowing you to have
          different styles/directions for individual cells.
@@ -40,8 +40,7 @@ class ViewController: UITableViewController {
          
          */
         
-        if let timeStampView =
-            tableView.dequeueReusableRevealableView(withIdentifier: "timestamp") as? TimestampView {
+        if let timeStampView = tableView.dequeueReusableRevealableView(withIdentifier: "timestamp") as? TimestampView {
             timeStampView.date = message.date as Date
             timeStampView.width = 55
             
@@ -89,11 +88,6 @@ class ViewController: UITableViewController {
         controller.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
         present(controller, animated: true, completion: nil)
     }
-    
-    
-    /*func tableView(_ tableView: UITableView, cellForRowAtIndexPath indexPath: IndexPath) -> UITableViewCell {
-        
-    }*/
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> RevealableTableViewCell {
         let message = messages[indexPath.item]

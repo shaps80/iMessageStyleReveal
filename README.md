@@ -9,9 +9,15 @@ Installation
 
 Simply add the following to your Podfile:
 
-`pod 'RevealableCell'`
+If you need Swift 2.2:
+`pod 'RevealableCell', '1.1'`
 
-Then add the followig import at the top of your source file(s):
+If you need Swift 3.0:
+`pod 'RevealableCell', '2.0'`
+
+---
+
+Then add the following import at the top of your source file(s):
 
 Swift
 `import RevealableCell`

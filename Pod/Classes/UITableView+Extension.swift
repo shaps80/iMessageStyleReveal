@@ -80,7 +80,7 @@ extension UITableView: UIGestureRecognizerDelegate {
     }
     
     public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
-        return true
+        return [gestureRecognizer, otherGestureRecognizer].contains(revealPanGesture)
     }
     
     open override func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
@@ -96,7 +96,6 @@ extension UITableView: UIGestureRecognizerDelegate {
         return objc_getAssociatedObject(self, &AssociationKey.panGesture) as? UIPanGestureRecognizer ?? {
             let associatedProperty = UIPanGestureRecognizer(target: self, action: #selector(UITableView.handleRevealPan(_:)))
             associatedProperty.delegate = self
-            //      self.panGestureRecognizer.enabled = false
             objc_setAssociatedObject(self, &AssociationKey.panGesture, associatedProperty, .OBJC_ASSOCIATION_RETAIN)
             return associatedProperty
             }()

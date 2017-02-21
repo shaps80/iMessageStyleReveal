@@ -188,7 +188,7 @@
 			attributes = {
 				LastSwiftMigration = 0730;
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "152 Percent";
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
