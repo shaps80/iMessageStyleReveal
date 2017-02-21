@@ -11,7 +11,7 @@ import UIKit
 open class RevealableTableViewCell: UITableViewCell {
     
     internal var horizontalConstraint: NSLayoutConstraint?
-    internal var revealView: RevealableView?
+    internal weak var revealView: RevealableView?
     internal var revealWidth: CGFloat = 0
     
     open override var isSelected: Bool {
