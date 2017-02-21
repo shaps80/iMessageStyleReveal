@@ -46,31 +46,31 @@
 		062864EEC41EAA307B59B639FE7C516A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		093F6BA34EECE90A267C640E5F7B661D /* Pods-RevealableCell_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RevealableCell_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		0C37A6156AC18BC7F6794C67BCF02C90 /* Pods-RevealableCell_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RevealableCell_Example-frameworks.sh"; sourceTree = "<group>"; };
-		21CD9FE26B12D9AF64D23BB17634E712 /* RevealableCell.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = RevealableCell.framework; path = RevealableCell.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		21CDEE76281EA6B27DB93D38AD91A033 /* RevealableCell.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = RevealableCell.modulemap; sourceTree = "<group>"; };
+		21CD9FE26B12D9AF64D23BB17634E712 /* RevealableCell.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RevealableCell.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		21CDEE76281EA6B27DB93D38AD91A033 /* RevealableCell.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = RevealableCell.modulemap; sourceTree = "<group>"; };
 		228DF7CE9E97D8FFD233E1AB69BE6199 /* LoremIpsum.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LoremIpsum.h; path = LoremIpsum/LoremIpsum.h; sourceTree = "<group>"; };
-		240FF730E4C4138CC7DD908242EB24EE /* Pods-RevealableCell_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-RevealableCell_Example.modulemap"; sourceTree = "<group>"; };
+		240FF730E4C4138CC7DD908242EB24EE /* Pods-RevealableCell_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-RevealableCell_Example.modulemap"; sourceTree = "<group>"; };
 		36BA25A5FCB7C32CD159C7E5EF55E80D /* LoremIpsum-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LoremIpsum-umbrella.h"; sourceTree = "<group>"; };
 		4458FB9EA6B256AF048706620422D3CE /* RevealableCell-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RevealableCell-umbrella.h"; sourceTree = "<group>"; };
 		5378CD2731DA611A4A157CDEBAB1C058 /* Pods-RevealableCell_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-RevealableCell_Example-dummy.m"; sourceTree = "<group>"; };
 		5E012D6470545D4D3166324DBD9142BA /* Pods-RevealableCell_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RevealableCell_Example-resources.sh"; sourceTree = "<group>"; };
 		692468815A079160A5A980E4C88102F4 /* RevealableView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RevealableView.swift; sourceTree = "<group>"; };
-		6B37EB5D60EB9E9411723533F86205F5 /* Pods_RevealableCell_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_RevealableCell_Example.framework; path = "Pods-RevealableCell_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B37EB5D60EB9E9411723533F86205F5 /* Pods_RevealableCell_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RevealableCell_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FEBD73255B5013F1273A512B4C7DBA6 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		72D96C3A14DB1A1A908A19EAB18CB420 /* Pods-RevealableCell_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RevealableCell_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		7FC18B0E46A54B2CC4C7E63D87E2461F /* LoremIpsum-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LoremIpsum-dummy.m"; sourceTree = "<group>"; };
 		8DD35FC8CE8CCAFA582D7C0AF3596048 /* LoremIpsum.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LoremIpsum.m; path = LoremIpsum/LoremIpsum.m; sourceTree = "<group>"; };
 		8FA683F03E128D5505C9D64CA42F0F16 /* RevealableTableViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RevealableTableViewCell.swift; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9BC433F0D8A256C7A3D1388DAE3B225E /* RevealableCell-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RevealableCell-prefix.pch"; sourceTree = "<group>"; };
 		9EDFBA72CFB582E4E2AB4ED58C489FC9 /* Pods-RevealableCell_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-RevealableCell_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		A80567C5D38A42ED4E61960FEA8C6CAB /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC8EC8BF43232238E7AF5C4BDB4765E1 /* RevealableCell-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RevealableCell-dummy.m"; sourceTree = "<group>"; };
-		BCD383283E1B52E43007F90B69094385 /* LoremIpsum.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = LoremIpsum.modulemap; sourceTree = "<group>"; };
+		BCD383283E1B52E43007F90B69094385 /* LoremIpsum.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = LoremIpsum.modulemap; sourceTree = "<group>"; };
 		C0C9F354896CF74D9DD11D8A6F550E22 /* LoremIpsum.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LoremIpsum.xcconfig; sourceTree = "<group>"; };
 		C34F72D9C04C15A2C42C0BA2630491E1 /* UITableView+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
 		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		DBA3C296730AE98B3C3B61CAB28510C3 /* LoremIpsum.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = LoremIpsum.framework; path = LoremIpsum.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBA3C296730AE98B3C3B61CAB28510C3 /* LoremIpsum.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LoremIpsum.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F342F04B64F2C594BA7622ACF82E97E2 /* LoremIpsum-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LoremIpsum-prefix.pch"; sourceTree = "<group>"; };
 		FA98E2487E03BC760D4F6FE776A8AEE8 /* RevealableCell.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RevealableCell.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -166,7 +166,6 @@
 				8DD35FC8CE8CCAFA582D7C0AF3596048 /* LoremIpsum.m */,
 				C3EA9F4D7F399B5370474075102AAA47 /* Support Files */,
 			);
-			name = LoremIpsum;
 			path = LoremIpsum;
 			sourceTree = "<group>";
 		};
@@ -195,7 +194,6 @@
 			children = (
 				BB0E88D735A4148EE18C0425241662D6 /* Classes */,
 			);
-			name = Pod;
 			path = Pod;
 			sourceTree = "<group>";
 		};
@@ -226,7 +224,6 @@
 				692468815A079160A5A980E4C88102F4 /* RevealableView.swift */,
 				C34F72D9C04C15A2C42C0BA2630491E1 /* UITableView+Extension.swift */,
 			);
-			name = Classes;
 			path = Classes;
 			sourceTree = "<group>";
 		};
@@ -342,6 +339,7 @@
 		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0730;
 				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0700;
 			};
@@ -548,6 +546,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_VERSION = 2.3;
 				SYMROOT = "${SRCROOT}/../build";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -593,6 +592,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_VERSION = 2.3;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
