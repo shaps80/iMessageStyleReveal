@@ -9,7 +9,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods.xcscheme</key>
+		<key>Pods-RevealableCell_Example.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -22,17 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>A5DF3319BA7B020778F7D807A2EEB9F1</key>
+		<key>91710B7DF90241FB3857CCDA4E28AFE6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AC8432121E84B3F4C381F4D5E457C765</key>
+		<key>B2F3D5C984A0E2D376BDAADD82A865CD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CDF682E45BA853ECA658CD1D1FFD1747</key>
+		<key>DF64567535F8487A35F8788784C7D78C</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -8,10 +8,12 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   RevealableCell:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
   LoremIpsum: 9029c55d36501b2ee0b05cc9ecda11d3a0479160
-  RevealableCell: 4eeabd069739d42ef3ea25f8ebc5fca08ef01b5e
+  RevealableCell: cd593a7c278e6dcda843232c6eaecf8666164e22
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: 28102e5d51d438abd97b513e4c4eae31eb0830bc
+
+COCOAPODS: 1.2.0

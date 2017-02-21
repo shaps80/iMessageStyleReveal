@@ -1,5 +1,7 @@
 source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 
-pod "RevealableCell", :path => "../"
-pod "LoremIpsum"
+target 'RevealableCell_Example' do
+    pod "RevealableCell", :path => "../"
+    pod "LoremIpsum"
+end
