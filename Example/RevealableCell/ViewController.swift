@@ -10,12 +10,14 @@ import UIKit
 import LoremIpsum
 import RevealableCell
 
-enum Cell: String {
-    case Left = "leftAlignedCell"
-    case Right = "rightAlignedCell"
+enum Position: String {
+    case left = "leftAlignedCell"
+    case right = "rightAlignedCell"
 }
 
 class ViewController: UITableViewController {
+
+    var messages = [Message]()
     
     func configure(cell: TableViewCell, at indexPath: IndexPath, with message: Message) {
         
@@ -44,7 +46,7 @@ class ViewController: UITableViewController {
             timeStampView.date = message.date as Date
             timeStampView.width = 55
             
-            if message.cell == .Left {
+            if message.position == .left {
                 cell.setRevealableView(timeStampView, style: .over)
             } else {
                 cell.setRevealableView(timeStampView, style: .slide)
@@ -54,31 +56,26 @@ class ViewController: UITableViewController {
         cell.messageLabel.text = message.text
     }
     
-    
-    
-    
-    
-    
-    var messages = [Message]()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.registerNib(UINib(nibName: "TimestampView", bundle: nil), forRevealableViewReuseIdentifier: "timestamp")
         tableView.registerNib(UINib(nibName: "TimestampView", bundle: nil), forRevealableViewReuseIdentifier: "name")
-        
+
         tableView.rowHeight = UITableView.automaticDimension
-        
-        messages = [
-            Message(cell: .Left, date: NSDate(timeIntervalSinceNow: 60), text: "Do you know how to put an Ad on Craig's List?", name: "Francesco"),
-            Message(cell: .Right, date: NSDate(timeIntervalSinceNow: 120), text: "Yes, its easy. Why?", name: "Shaps"),
-            Message(cell: .Left, date: NSDate(timeIntervalSinceNow: 160), text: "We need a nurse to fuck my grandma at night", name: "Francesco"),
-            Message(cell: .Right, date: NSDate(timeIntervalSinceNow: 240), text: "Oh my. Well lord knows you can find that, and more, on craigslist! Haha", name: "Shaps"),
-            Message(cell: .Left, date: NSDate(timeIntervalSinceNow: 340), text: "lol no my grandma needs fuck at night", name: "Francesco"),
-            Message(cell: .Right, date: NSDate(timeIntervalSinceNow: 400), text: "Oh, don't we all ;)", name: "Shaps"),
-            Message(cell: .Left, date: NSDate(timeIntervalSinceNow: 550), text: "help! God damn it help! Auto correct sucks!", name: "Francesco"),
-            Message(cell: .Right, date: NSDate(timeIntervalSinceNow: 600), text: "HAHAHAHA!", name: "Shaps")
-        ]
+        tableView.estimatedRowHeight = 50
+
+        if #available(iOS 11.0, *) {
+            tableView.contentInsetAdjustmentBehavior = .never
+        }
+
+        for i in 0..<100 {
+            let text = LoremIpsum.sentence()!
+            let position: Position = i % 2 == 0 ? .left : .right
+            let date = Date(timeIntervalSinceNow: TimeInterval(i) * 60)
+            let message = Message(position: position, date: date, text: text)
+            messages.append(message)
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -91,28 +88,9 @@ class ViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> RevealableTableViewCell {
         let message = messages[indexPath.item]
-        let cell = tableView.dequeueReusableCell(withIdentifier: message.cell.rawValue, for: indexPath as IndexPath) as! TableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: message.position.rawValue, for: indexPath as IndexPath) as! TableViewCell
         configure(cell: cell, at: indexPath, with: message)
         return cell
-    }
-    
-    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 49
-    }
-    
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let message = messages[indexPath.item]
-        
-        if let cell = tableView.dequeueReusableCell(withIdentifier: message.cell.rawValue) as? TableViewCell {
-            configure(cell: cell, at: indexPath, with: message)
-            return cell.contentView.systemLayoutSizeFitting(UIView.layoutFittingExpandedSize).height
-        }
-        
-        return 50
-    }
-    
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Today"
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -124,15 +102,13 @@ class ViewController: UITableViewController {
 final class Message {
     
     let text: String
-    let date: NSDate
-    let cell: Cell
-    let name: String
+    let date: Date
+    let position: Position
     
-    init(cell: Cell, date: NSDate, text: String, name: String) {
+    init(position: Position, date: Date, text: String) {
         self.text = text
-        self.cell = cell
+        self.position = position
         self.date = date
-        self.name = name
     }
     
 }
