@@ -7,16 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0D1D34F245D7D56C18F585CA2DAAB027 /* RevealableTableViewBehaviour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6055A526154AB2D27C05B1A7AC13D2BE /* RevealableTableViewBehaviour.swift */; };
 		602DE86ED494EC62E1AF8742DC17D25C /* Pods-RevealableCell_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DFA406F29A634E19FCDBE650E405B09 /* Pods-RevealableCell_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		64585F484142000604658B337DC8DF70 /* LoremIpsum.m in Sources */ = {isa = PBXBuildFile; fileRef = BD9E3572E0FC51167F83FCC7C2D094B4 /* LoremIpsum.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		6525E50BCA8A2898D5DC34EB00E3EDD3 /* LoremIpsum-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F1E1E0EB1F3A63588BCA48E31843C35B /* LoremIpsum-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		89316D16857CBF7663030DAF84D780F6 /* RevealableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABB56103FCFAB7499C7FC7144204D7B /* RevealableView.swift */; };
 		8FF53413A552B695757DB59FA7074508 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		A9402A115767BFCF8A767376E192C49D /* RevealableCell-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = ABA00E83967D17D7F3FFD7F4897BDBC4 /* RevealableCell-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C11342B6A027253EADF51176B6084E10 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		D89D7E4B47406A9E69E0552158BE8AA7 /* ReuseQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DC8E8C497A62A8E6314063C16982FB /* ReuseQueue.swift */; };
-		E0DBD4C6681864C20719C9D349BCC945 /* UITableViewDelegateRevealable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC3F2404E169BBE395AFA91E2BA8682 /* UITableViewDelegateRevealable.swift */; };
 		E7F7DE39397DA87787343F490D0923D3 /* RevealableCell-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C8476CEE7DA52AD22959DA0CF839108 /* RevealableCell-dummy.m */; };
 		EBB0EFCEA41358B04964A531B18E5B3C /* LoremIpsum.h in Headers */ = {isa = PBXBuildFile; fileRef = 2069301EA351D3CDD53DD6A8C9779B91 /* LoremIpsum.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EE03C6333A26C6CCF5A87C263A65991C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
@@ -46,15 +42,15 @@
 		0D7E32AE3D3153F2083F443B1B8D8AFB /* Pods-RevealableCell_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RevealableCell_Example.release.xcconfig"; sourceTree = "<group>"; };
 		0DFA406F29A634E19FCDBE650E405B09 /* Pods-RevealableCell_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-RevealableCell_Example-umbrella.h"; sourceTree = "<group>"; };
 		0F05DD3659C2E40261D5FA70F3831482 /* LoremIpsum-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LoremIpsum-prefix.pch"; sourceTree = "<group>"; };
-		10A92BD26A6FD76AB87E2533BFDDE7E3 /* RevealableCell.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = RevealableCell.framework; path = RevealableCell.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		10A92BD26A6FD76AB87E2533BFDDE7E3 /* RevealableCell.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RevealableCell.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		10E1B481D48CCCB8233D0EC8ECBD90D9 /* LoremIpsum-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "LoremIpsum-Info.plist"; sourceTree = "<group>"; };
 		1D208F84131D55FE2B075A4C63C707A3 /* RevealableCell-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "RevealableCell-Info.plist"; sourceTree = "<group>"; };
 		2069301EA351D3CDD53DD6A8C9779B91 /* LoremIpsum.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LoremIpsum.h; path = LoremIpsum/LoremIpsum.h; sourceTree = "<group>"; };
-		2450F21D0E54ECA2AFBFEE7AD35D1506 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		2C61919221B2AA3A707EFF582A89F755 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		2450F21D0E54ECA2AFBFEE7AD35D1506 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		2C61919221B2AA3A707EFF582A89F755 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		3DD3CAA7B5559BFE454FE21AF5641FFF /* LoremIpsum.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LoremIpsum.xcconfig; sourceTree = "<group>"; };
-		45C97AA3BB7AA2A2B023E222071AA5A3 /* LoremIpsum.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = LoremIpsum.framework; path = LoremIpsum.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		45C97AA3BB7AA2A2B023E222071AA5A3 /* LoremIpsum.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LoremIpsum.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FCA4E665C14BB2B6E813D810E9AF984 /* Pods-RevealableCell_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-RevealableCell_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		50DC8E8C497A62A8E6314063C16982FB /* ReuseQueue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReuseQueue.swift; path = Pod/Classes/ReuseQueue.swift; sourceTree = "<group>"; };
 		52CF265896E16B75036003F9912D07EC /* Pods-RevealableCell_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RevealableCell_Example-frameworks.sh"; sourceTree = "<group>"; };
@@ -66,15 +62,15 @@
 		8ABB56103FCFAB7499C7FC7144204D7B /* RevealableView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RevealableView.swift; path = Pod/Classes/RevealableView.swift; sourceTree = "<group>"; };
 		8C8476CEE7DA52AD22959DA0CF839108 /* RevealableCell-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RevealableCell-dummy.m"; sourceTree = "<group>"; };
 		9BC3F2404E169BBE395AFA91E2BA8682 /* UITableViewDelegateRevealable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UITableViewDelegateRevealable.swift; path = Pod/Classes/UITableViewDelegateRevealable.swift; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		ABA00E83967D17D7F3FFD7F4897BDBC4 /* RevealableCell-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RevealableCell-umbrella.h"; sourceTree = "<group>"; };
 		ADA466C8601E19A7775BD6E456D692FE /* LoremIpsum.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = LoremIpsum.modulemap; sourceTree = "<group>"; };
 		BD9E3572E0FC51167F83FCC7C2D094B4 /* LoremIpsum.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LoremIpsum.m; path = LoremIpsum/LoremIpsum.m; sourceTree = "<group>"; };
 		D8832704A3C0B41E5CAEF81F43282AB8 /* Pods-RevealableCell_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RevealableCell_Example-Info.plist"; sourceTree = "<group>"; };
 		DA4322421C9CC460F56EA2B94C8F38E3 /* Pods-RevealableCell_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RevealableCell_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		DD344F0E9F4E45CB85D3D4FB34D74067 /* RevealableCell.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = RevealableCell.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		DD344F0E9F4E45CB85D3D4FB34D74067 /* RevealableCell.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = RevealableCell.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		E021D7655473EB3AF919F4DF381F713C /* Pods-RevealableCell_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-RevealableCell_Example.modulemap"; sourceTree = "<group>"; };
-		E4053385187444BFA2A92A0535099C7D /* Pods_RevealableCell_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_RevealableCell_Example.framework; path = "Pods-RevealableCell_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4053385187444BFA2A92A0535099C7D /* Pods_RevealableCell_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RevealableCell_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1E1E0EB1F3A63588BCA48E31843C35B /* LoremIpsum-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LoremIpsum-umbrella.h"; sourceTree = "<group>"; };
 		FEB712534A809CED30E1121F83AB16F7 /* LoremIpsum-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LoremIpsum-dummy.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -131,7 +127,6 @@
 				BD9E3572E0FC51167F83FCC7C2D094B4 /* LoremIpsum.m */,
 				1C07C53B9B2CD7DC8A92B30D66241062 /* Support Files */,
 			);
-			name = LoremIpsum;
 			path = LoremIpsum;
 			sourceTree = "<group>";
 		};
@@ -393,11 +388,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D89D7E4B47406A9E69E0552158BE8AA7 /* ReuseQueue.swift in Sources */,
 				E7F7DE39397DA87787343F490D0923D3 /* RevealableCell-dummy.m in Sources */,
-				0D1D34F245D7D56C18F585CA2DAAB027 /* RevealableTableViewBehaviour.swift in Sources */,
-				89316D16857CBF7663030DAF84D780F6 /* RevealableView.swift in Sources */,
-				E0DBD4C6681864C20719C9D349BCC945 /* UITableViewDelegateRevealable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -750,8 +741,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};

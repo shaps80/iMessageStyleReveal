@@ -6,6 +6,7 @@ public final class RevealableTableViewBehaviour: NSObject {
     private var offsetObserver: NSKeyValueObservation?
 
     private weak var tableViewDelegate: UITableViewDelegate?
+
     private let reuseQueues = RevealableViewsReuseQueues()
     public let position: RevealPosition
     private var cachedConfigs: [IndexPath: RevealableViewConfiguration] = [:]
@@ -122,9 +123,7 @@ extension RevealableTableViewBehaviour: UIGestureRecognizerDelegate {
                 self.translationX = 0
                 self.currentOffset = 0
                 self.updateTransforms(in: tableView, transform: .identity)
-            }, completion: { (finished: Bool) -> Void in
-                self.translationX = 0
-            })
+            }, completion: nil)
         }
     }
 
@@ -152,8 +151,10 @@ extension RevealableTableViewBehaviour: UIGestureRecognizerDelegate {
             ? cell.contentView
             : revealableView
 
-        transformView.frame.offsetBy(dx: x, dy: 0)
-        print(indexPath, x)
+//        transformView.frame = transformView.frame.offsetBy(dx: x, dy: 0)
+        transformView.transform = transform ?? CGAffineTransform(translationX: x, y: 0)
+//        cell.contentView.setNeedsUpdateConstraints()
+//        revealableView.setNeedsUpdateConstraints()
     }
 
     public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
@@ -162,7 +163,7 @@ extension RevealableTableViewBehaviour: UIGestureRecognizerDelegate {
 
     public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
         if let gesture = gestureRecognizer as? UIPanGestureRecognizer, gesture == panGesture {
-            let translation = gesture.translation(in: gesture.view);
+            let translation = gesture.translation(in: gesture.view)
             return (abs(translation.x) > abs(translation.y)) && (gesture == panGesture)
         }
 
@@ -190,7 +191,8 @@ extension RevealableTableViewBehaviour {
 
     public override func responds(to aSelector: Selector!) -> Bool {
         if super.responds(to: aSelector) { return true }
-        if tableViewDelegate?.responds(to: aSelector) ?? false { return true }
+        if tableViewDelegate?.responds(to: aSelector)
+            ?? false { return true }
         return false
     }
 

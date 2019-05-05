@@ -12,6 +12,10 @@
 		548EB8161C3B31DF0011F5FD /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548EB8151C3B31DF0011F5FD /* TableViewCell.swift */; };
 		54DB4900227F038500B0C301 /* ViewController+Revealable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54DB48FF227F038500B0C301 /* ViewController+Revealable.swift */; };
 		54DB4905227F0FE200B0C301 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54DB4904227F0FE200B0C301 /* Message.swift */; };
+		54E804B0227F848700260AC7 /* RevealableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E804AC227F848700260AC7 /* RevealableView.swift */; };
+		54E804B1227F848700260AC7 /* UITableViewDelegateRevealable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E804AD227F848700260AC7 /* UITableViewDelegateRevealable.swift */; };
+		54E804B2227F848700260AC7 /* RevealableTableViewBehaviour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E804AE227F848700260AC7 /* RevealableTableViewBehaviour.swift */; };
+		54E804B3227F848700260AC7 /* ReuseQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E804AF227F848700260AC7 /* ReuseQueue.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -31,6 +35,10 @@
 		548EB8151C3B31DF0011F5FD /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		54DB48FF227F038500B0C301 /* ViewController+Revealable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Revealable.swift"; sourceTree = "<group>"; };
 		54DB4904227F0FE200B0C301 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		54E804AC227F848700260AC7 /* RevealableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RevealableView.swift; sourceTree = "<group>"; };
+		54E804AD227F848700260AC7 /* UITableViewDelegateRevealable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewDelegateRevealable.swift; sourceTree = "<group>"; };
+		54E804AE227F848700260AC7 /* RevealableTableViewBehaviour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RevealableTableViewBehaviour.swift; sourceTree = "<group>"; };
+		54E804AF227F848700260AC7 /* ReuseQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReuseQueue.swift; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* RevealableCell_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RevealableCell_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -74,9 +82,22 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		54E804AB227F848700260AC7 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				54E804AC227F848700260AC7 /* RevealableView.swift */,
+				54E804AD227F848700260AC7 /* UITableViewDelegateRevealable.swift */,
+				54E804AE227F848700260AC7 /* RevealableTableViewBehaviour.swift */,
+				54E804AF227F848700260AC7 /* ReuseQueue.swift */,
+			);
+			name = Classes;
+			path = ../Pod/Classes;
+			sourceTree = "<group>";
+		};
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
+				54E804AB227F848700260AC7 /* Classes */,
 				607FACD21AFB9204008FA782 /* Example */,
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACE81AFB9204008FA782 /* Tests */,
@@ -267,8 +288,12 @@
 			files = (
 				54DB4900227F038500B0C301 /* ViewController+Revealable.swift in Sources */,
 				54DB4905227F0FE200B0C301 /* Message.swift in Sources */,
+				54E804B3227F848700260AC7 /* ReuseQueue.swift in Sources */,
+				54E804B0227F848700260AC7 /* RevealableView.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				548EB8161C3B31DF0011F5FD /* TableViewCell.swift in Sources */,
+				54E804B1227F848700260AC7 /* UITableViewDelegateRevealable.swift in Sources */,
+				54E804B2227F848700260AC7 /* RevealableTableViewBehaviour.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				54580A6A1C39BF1A00A93AA1 /* TimestampView.swift in Sources */,
 			);
