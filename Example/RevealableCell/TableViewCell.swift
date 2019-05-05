@@ -1,23 +1,22 @@
-//
-//  TableViewCell.swift
-//  RevealableCell
-//
-//  Created by Shaps Mohsenin on 04/01/2016.
-//  Copyright © 2016 CocoaPods. All rights reserved.
-//
-
 import UIKit
 import RevealableCell
 
-@IBDesignable final class RoundedView: UIView {
+final class TableViewCell: UITableViewCell {
+
+    @IBOutlet private weak var messageLabel: UILabel!
+
+    func apply(message: String) {
+        messageLabel.text = message
+    }
+
+}
+
+@IBDesignable
+final class RoundedView: UIView {
     
     @IBInspectable var cornerRadius: CGFloat {
-        get {
-            return layer.cornerRadius
-        }
-        set {
-            layer.cornerRadius = newValue
-        }
+        get { return layer.cornerRadius }
+        set { layer.cornerRadius = newValue }
     }
     
     override init(frame: CGRect) {
@@ -29,10 +28,5 @@ import RevealableCell
         super.init(coder: aDecoder)
         cornerRadius = 5
     }
-}
-
-final class TableViewCell: RevealableTableViewCell {
-    
-    @IBOutlet weak var messageLabel: UILabel!
     
 }
