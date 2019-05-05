@@ -17,6 +17,8 @@ enum Position: String {
 
 class ViewController: UITableViewController {
 
+    private var behaviour: RevealableTableViewBehaviour!
+
     var messages = [Message]()
     
     func configure(cell: TableViewCell, at indexPath: IndexPath, with message: Message) {
@@ -32,7 +34,7 @@ class ViewController: UITableViewController {
          3. In cellForRowAtIndexPath you can dequeue and configure an instance using:
             if let view = tableView.dequeueReusableRevealableViewWithIdentifier("identifier") as? MyRevealableView {
                 view.titleLabel.text = ""
-                cell.setRevealableView(view, style: .Slide, direction: .Left)
+                cell.setRevealableView(view, style: .slide, direction: .left)
             }
          
          This new implementation, allows reusable revealableViews of the same type as well as allowing you to have
@@ -58,6 +60,8 @@ class ViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        behaviour = RevealableTableViewBehaviour(tableView: tableView)
         
         tableView.registerNib(UINib(nibName: "TimestampView", bundle: nil), forRevealableViewReuseIdentifier: "timestamp")
         tableView.registerNib(UINib(nibName: "TimestampView", bundle: nil), forRevealableViewReuseIdentifier: "name")

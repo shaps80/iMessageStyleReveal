@@ -21,9 +21,7 @@ public enum RevealSwipeDirection {
 open class RevealableView: UIControl {
     
     @IBInspectable open var width: CGFloat = 0 {
-        didSet {
-            prepareWidthConstraint()
-        }
+        didSet { prepareWidthConstraint() }
     }
     
     internal weak var tableView: UITableView?
