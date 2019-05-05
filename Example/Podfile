@@ -1,8 +1,8 @@
 source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '10.0'
 use_frameworks!
 
 target 'RevealableCell_Example' do
-    platform :ios, '8.0'
     pod "RevealableCell", :path => "../"
     pod "LoremIpsum"
 end

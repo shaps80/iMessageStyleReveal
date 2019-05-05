@@ -25,7 +25,7 @@ class ViewController: UITableViewController {
             tableView.contentInsetAdjustmentBehavior = .never
         }
 
-        for i in 0..<100 {
+        for i in 0..<1000 {
             let text = LoremIpsum.sentence()!
             let style: RevealStyle = i % 2 == 0 ? .over : .slide
             let date = Date(timeIntervalSinceNow: TimeInterval(i) * 60)
