@@ -9,6 +9,9 @@ Installation
 
 Simply add the following to your Podfile:
 
+Latest release uses Swift 5:
+`pod RevealableCell`
+
 If you need Swift 2.2:
 `pod 'RevealableCell', '1.1'`
 
