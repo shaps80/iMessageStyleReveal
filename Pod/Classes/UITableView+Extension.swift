@@ -86,7 +86,7 @@ extension UITableView: UIGestureRecognizerDelegate {
     open override func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
         if let gesture = gestureRecognizer as? UIPanGestureRecognizer, gesture == revealPanGesture {
             let translation = gesture.translation(in: gesture.view);
-            return (fabs(translation.x) > abs(translation.y)) && (gesture == revealPanGesture)
+            return (abs(translation.x) > abs(translation.y)) && (gesture == revealPanGesture)
         }
         
         return true
@@ -121,7 +121,7 @@ extension UITableView: UIGestureRecognizerDelegate {
         let regs = registrations
         
         guard regs[identifier] == nil else {
-            print("A revealableView with the identifier '\(identifier)' already exists -- '\(regs[identifier])'")
+            print("A revealableView with the identifier '\(identifier)' already exists -- '\(regs[identifier] ?? "")'")
             return
         }
         
@@ -132,7 +132,7 @@ extension UITableView: UIGestureRecognizerDelegate {
         let regs = registrations
         
         guard regs[identifier] == nil else {
-            print("A revealableView with the identifier '\(identifier)' already exists -- '\(regs[identifier])'")
+            print("A revealableView with the identifier '\(identifier)' already exists -- '\(regs[identifier] ?? "")'")
             return
         }
         

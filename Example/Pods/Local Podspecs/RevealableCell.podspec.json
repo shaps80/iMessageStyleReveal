@@ -1,9 +1,9 @@
 {
   "name": "RevealableCell",
-  "version": "1.0",
+  "version": "2.5",
   "summary": "iMessage style pull-to-reveal timestamps.",
-  "homepage": "http://shaps.me/blog/imessage-style-reveal/",
-  "screenshots": "http://shaps.me/assets/img/blog/iMessageStyleReveal@2x.jpg",
+  "homepage": "https://github.com/shaps80/iMessageStyleReveal",
+  "screenshots": "<INSERT_URL_HERE>",
   "license": "MIT",
   "authors": {
     "Shaps Mohsenin": "shapsuk@me.com"
@@ -14,7 +14,7 @@
   },
   "source": {
     "git": "https://github.com/shaps80/iMessageStyleReveal.git",
-    "tag": "1.0"
+    "tag": "2.5"
   },
   "source_files": [
     "Pod/Classes",
