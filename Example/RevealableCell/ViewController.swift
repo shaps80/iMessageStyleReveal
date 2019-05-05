@@ -67,7 +67,7 @@ class ViewController: UITableViewController {
         tableView.registerNib(UINib(nibName: "TimestampView", bundle: nil), forRevealableViewReuseIdentifier: "timestamp")
         tableView.registerNib(UINib(nibName: "TimestampView", bundle: nil), forRevealableViewReuseIdentifier: "name")
         
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
         
         messages = [
             Message(cell: .Left, date: NSDate(timeIntervalSinceNow: 60), text: "Do you know how to put an Ad on Craig's List?", name: "Francesco"),
@@ -105,7 +105,7 @@ class ViewController: UITableViewController {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: message.cell.rawValue) as? TableViewCell {
             configure(cell: cell, at: indexPath, with: message)
-            return cell.contentView.systemLayoutSizeFitting(UILayoutFittingExpandedSize).height
+            return cell.contentView.systemLayoutSizeFitting(UIView.layoutFittingExpandedSize).height
         }
         
         return 50
