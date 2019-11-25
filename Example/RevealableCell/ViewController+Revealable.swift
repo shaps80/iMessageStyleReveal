@@ -7,7 +7,6 @@ extension ViewController: UITableViewDelegateRevealable {
         let message = messages[indexPath.item]
         return RevealableViewConfiguration(type: TimestampView.self, style: message.style, dequeueSource: .nib) { view, indexPath in
             view.date = message.date as Date
-//            view.width = 55
         }
     }
 

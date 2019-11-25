@@ -1,11 +1,11 @@
 Pod::Spec.new do |s|
     s.name         = "RevealableCell"
-    s.version      = "2.5"
+    s.version      = "2.5.2"
+    s.swift_versions = ["5.1"]
     s.summary      = "iMessage style pull-to-reveal timestamps."
     s.homepage     = "https://github.com/shaps80/iMessageStyleReveal"
-    s.screenshots  = "<INSERT_URL_HERE>"
     s.license      = 'MIT'
-    s.author       = { "Shaps Mohsenin" => "shapsuk@me.com" }
+    s.author       = { "Shaps Benkau" => "shapsuk@me.com" }
     s.social_media_url = "http://twitter.com/shaps"
     s.platform     = :ios
     s.platform     = :ios, '10.0'

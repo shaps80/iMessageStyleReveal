@@ -65,6 +65,7 @@ public final class RevealableTableViewBehaviour: NSObject {
         }
 
         if let view = config.revealableView ?? queue.dequeueView() {
+            view.transform = .identity
             prepare(view: view, for: cell, at: indexPath, with: config)
             return
         }
@@ -95,7 +96,6 @@ public final class RevealableTableViewBehaviour: NSObject {
 
         view.prepareForReuse()
         view.removeFromSuperview()
-        updateTransform(transform: .identity, cell: cell, config: config, revealableView: view, indexPath: indexPath)
         queue.enqueue(view)
 
         config.revealableView = nil
@@ -151,10 +151,7 @@ extension RevealableTableViewBehaviour: UIGestureRecognizerDelegate {
             ? cell.contentView
             : revealableView
 
-//        transformView.frame = transformView.frame.offsetBy(dx: x, dy: 0)
         transformView.transform = transform ?? CGAffineTransform(translationX: x, y: 0)
-//        cell.contentView.setNeedsUpdateConstraints()
-//        revealableView.setNeedsUpdateConstraints()
     }
 
     public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
